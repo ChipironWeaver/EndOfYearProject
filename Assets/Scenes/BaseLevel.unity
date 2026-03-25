@@ -128,6 +128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 300308520}
+  - component: {fileID: 300308522}
   m_Layer: 0
   m_Name: Camera Target
   m_TagString: Untagged
@@ -144,12 +145,42 @@ Transform:
   m_GameObject: {fileID: 300308519}
   serializedVersion: 2
   m_LocalRotation: {x: 0.3420201, y: 0, z: 0, w: 0.9396927}
-  m_LocalPosition: {x: 0, y: 6, z: -5}
+  m_LocalPosition: {x: 0, y: 6, z: -6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1110371986}
   m_LocalEulerAnglesHint: {x: 40, y: 0, z: 0}
+--- !u!114 &300308522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300308519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
+  m_Actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: 
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &1110371981
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,10 +193,9 @@ GameObject:
   - component: {fileID: 1110371985}
   - component: {fileID: 1110371984}
   - component: {fileID: 1110371983}
-  - component: {fileID: 1110371987}
   - component: {fileID: 1110371988}
   - component: {fileID: 1110371989}
-  - component: {fileID: 1110371990}
+  - component: {fileID: 1110371987}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -281,6 +311,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 314a4f7a3adae084392edc52e02bf619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  sensitivity: 0.5
   moveSpeed: 5
   gravityForce: -18
   isGrounded: 0
@@ -340,20 +371,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1110371990
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1110371981}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 036bf6a9b1b24df4cab1028a54d94fed, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CameraPivotRotation
-  pivot: {fileID: 1110371986}
-  sensitivity: 0.5
 --- !u!1 &1340681030
 GameObject:
   m_ObjectHideFlags: 0
@@ -635,8 +652,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1371155691}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.34202018, y: 0.000000028330094, z: -0.000000010311313, w: 0.9396926}
-  m_LocalPosition: {x: 0, y: 9.98, z: -5}
+  m_LocalRotation: {x: 0.3420201, y: 0, z: 0, w: 0.9396927}
+  m_LocalPosition: {x: 0, y: 9.98, z: -6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -825,13 +842,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1645666531}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.34202015, y: 0, z: 0, w: 0.9396927}
-  m_LocalPosition: {x: 0, y: 9.98, z: -5}
+  m_LocalRotation: {x: 0.3420201, y: -0, z: -0, w: 0.9396927}
+  m_LocalPosition: {x: 0, y: 9.98, z: -6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 40, y: 0.03, z: 0}
 --- !u!114 &1645666535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -846,9 +863,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineFollow
   TrackerSettings:
     BindingMode: 3
-    PositionDamping: {x: 0.2, y: 0.2, z: 0.2}
+    PositionDamping: {x: 0, y: 0, z: 0.1}
     AngularDampingMode: 0
-    RotationDamping: {x: 0.2, y: 0.2, z: 0.2}
+    RotationDamping: {x: 0, y: 0, z: 0}
     QuaternionDamping: 1
   FollowOffset: {x: 0, y: 0, z: 0}
 --- !u!114 &1645666536
@@ -863,7 +880,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4afa82ae3200b82408d605c3dbdd1e38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineRotateWithFollowTarget
-  Damping: 0.2
+  Damping: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
