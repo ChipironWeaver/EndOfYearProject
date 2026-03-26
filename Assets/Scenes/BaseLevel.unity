@@ -191,6 +191,7 @@ GameObject:
   m_Component:
   - component: {fileID: 754803764}
   - component: {fileID: 754803765}
+  - component: {fileID: 754803766}
   m_Layer: 0
   m_Name: PivotRotation
   m_TagString: Untagged
@@ -206,14 +207,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 754803763}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.2588191, y: 0, z: 0, w: 0.9659258}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 300308520}
   m_Father: {fileID: 1110371986}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
 --- !u!114 &754803765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,10 +227,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 036bf6a9b1b24df4cab1028a54d94fed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraPivotRotation
-  player: {fileID: 0}
-  sensitivity: 1
-  distance: 1
+  sensitivity: 50
+  distance: 10
   child: {fileID: 300308520}
+  _angleClamp: {x: 0, y: 60}
+--- !u!114 &754803766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754803763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.PlayerInput
+  m_Actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: 
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &1110371981
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,11 +391,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 314a4f7a3adae084392edc52e02bf619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  sensitivity: 0.5
+  _sensitivity: 50
+  _angleClamp: {x: 0, y: 50}
+  _pivot: {fileID: 754803764}
+  _cameraFollowPoint: {fileID: 300308520}
+  _cameraDistance: 6
   moveSpeed: 5
   gravityForce: -18
-  isGrounded: 0
   jumpForce: 3
+  isGrounded: 0
 --- !u!114 &1110371988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -701,8 +736,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1371155691}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.98, z: -6}
+  m_LocalRotation: {x: 0.2588191, y: 0, z: 0, w: 0.9659258}
+  m_LocalPosition: {x: 0, y: 6.9800005, z: -5.196152}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -891,8 +926,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1645666531}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.98, z: -6}
+  m_LocalRotation: {x: 0.2588191, y: -0, z: -0, w: 0.9659258}
+  m_LocalPosition: {x: 0, y: 6.9800005, z: -5.196152}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
