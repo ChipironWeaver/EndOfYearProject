@@ -61,7 +61,7 @@ public class PlayerMovementController : MonoBehaviour
         transform.Rotate(new Vector3(0,-_mouse.x * _sensitivity * Time.deltaTime,0));
         _cameraFollowPoint.localPosition =new Vector3(0,0,-_cameraDistance) ;
         
-        Vector3 cameraRotation = new Vector3(Mathf.Clamp(_mouse.y, -30f, 30f), 0, 0) * (_sensitivity * Time.deltaTime );
+        Vector3 cameraRotation = new Vector3(Mathf.Clamp(-_mouse.y, -30f, 30f), 0, 0) * (_sensitivity * Time.deltaTime );
         cameraRotation = _pivot.eulerAngles + cameraRotation;
         cameraRotation.x = ClampAngle(cameraRotation.x, _angleClamp.x, _angleClamp.y);
         
