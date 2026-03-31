@@ -12,6 +12,9 @@ public class HealthController : MonoBehaviour
     public float defence;
     public bool isInvincible;
     public float invincibilityTime;
+
+    [BoxGroup("Testing")]
+    [SerializeField] private float damagetest;
     public static HealthController Instance { get; private set; }
 
     void Awake()
@@ -31,9 +34,12 @@ public class HealthController : MonoBehaviour
             else
             {
                 finalDamage = Mathf.Clamp(damage - defence, 1, 100000) *
-                              (100 - Mathf.Clamp(damageResistance, -1000, 99));
+                              (1 - Mathf.Clamp(damageResistance, -1000, 99f)/100);
+                
             }
+            isInvincible = true;
             Invoke(nameof(RemoveInvincibility), invincibilityTime);
+            print(finalDamage);
         }
     }
 
@@ -60,5 +66,15 @@ public class HealthController : MonoBehaviour
         {
             Instance = this;
         }
+    }
+    [Button]
+    void DamageTest()
+    {
+        TakeDamage(damagetest);
+    }
+    [Button]
+    void TrueDamageTest()
+    {
+        TakeDamage(damagetest, true);
     }
 }

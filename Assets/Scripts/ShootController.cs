@@ -31,7 +31,6 @@ public class ShootController : MonoBehaviour
         {
             GameObject instantiate = Instantiate(_projectilePrefab, _projectileSpawnPoint.position, Quaternion.identity);
             instantiate.GetComponent<Rigidbody>().AddForce(_projectileSpawnPoint.forward * bulletPower, ForceMode.Impulse);
-            print(_projectileSpawnPoint.forward * bulletPower);
         }
     }
     
