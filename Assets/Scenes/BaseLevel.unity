@@ -260,6 +260,7 @@ GameObject:
   - component: {fileID: 1110371989}
   - component: {fileID: 1110371987}
   - component: {fileID: 1110371990}
+  - component: {fileID: 1110371991}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -458,6 +459,24 @@ MonoBehaviour:
   _projectilePrefab: {fileID: 8910999014129750127, guid: 977443a476671614ab9b27a0a4184728, type: 3}
   _projectileSpawnPoint: {fileID: 1543657480}
   _currentCooldown: 0
+--- !u!114 &1110371991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1110371981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebd9f608aff6a4945a344f6d6a34c6ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  maxHealth: 0
+  currentHealth: 0
+  damageResistance: 0
+  defence: 0
+  isInvincible: 0
+  invincibilityTime: 0
 --- !u!1 &1340681030
 GameObject:
   m_ObjectHideFlags: 0
