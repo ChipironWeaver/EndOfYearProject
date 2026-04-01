@@ -1,22 +1,32 @@
-using System;
-using System.Collections;
 using NaughtyAttributes;
-using NUnit.Framework.Constraints;
 using UnityEngine;
 
 public class HealthController : MonoBehaviour
 {
-    public float maxHealth;
+    [BoxGroup("Health")]
     public float currentHealth;
+    [BoxGroup("Health")]
+    public float maxHealth;
+    [BoxGroup("Defence")]
     public float damageResistance;
+    [BoxGroup("Defence")]
     public float defence;
+    [BoxGroup("Invincibility")]
     public bool isInvincible;
+    [BoxGroup("Invincibility")]
     public float invincibilityTime;
-
-    [BoxGroup("Testing")]
-    [SerializeField] private float damagetest;
+    
     public static HealthController Instance { get; private set; }
 
+    public delegate void OnPlayerDamage();
+    public static event OnPlayerDamage onPlayerDamage;
+    
+    public delegate void OnPlayerHeal();
+    public static event OnPlayerHeal onPlayerHeal;
+    
+    public delegate void OnPlayerDeath();
+    public static event OnPlayerDeath onPlayerDeath;
+    
     void Awake()
     {
         Singleton();
@@ -39,18 +49,15 @@ public class HealthController : MonoBehaviour
             }
             isInvincible = true;
             Invoke(nameof(RemoveInvincibility), invincibilityTime);
-            print(finalDamage);
+            onPlayerDamage?.Invoke();
         }
     }
-
     void Heal(float healAmount)
     {
         if (healAmount + currentHealth > maxHealth) currentHealth = maxHealth;
         else currentHealth += healAmount;
+        onPlayerHeal?.Invoke();
     }
-    
-    
-    [Button]
     void RemoveInvincibility()
     {
         isInvincible = false;
@@ -58,7 +65,7 @@ public class HealthController : MonoBehaviour
 
     void Singleton()
     {
-        if (Instance != this)
+        if (Instance !=null && Instance != this)
         {
             Destroy(this);
         }
@@ -66,15 +73,5 @@ public class HealthController : MonoBehaviour
         {
             Instance = this;
         }
-    }
-    [Button]
-    void DamageTest()
-    {
-        TakeDamage(damagetest);
-    }
-    [Button]
-    void TrueDamageTest()
-    {
-        TakeDamage(damagetest, true);
     }
 }
