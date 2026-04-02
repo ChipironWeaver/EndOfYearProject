@@ -2450,6 +2450,9 @@ MonoBehaviour:
   cooldown: 2
   numberOfProjectiles: 1.5
   bulletPower: 40
+  _hasAutoTarget: 1
+  _autoTargetTag: Enemy
+  _splitTargetWithMultipleShots: 0
   _projectilePrefab: {fileID: 8910999014129750127, guid: 977443a476671614ab9b27a0a4184728, type: 3}
   _projectileSpawnPoint: {fileID: 1543657480}
   _currentCooldown: 0
