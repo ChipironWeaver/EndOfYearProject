@@ -1,7 +1,12 @@
+using NaughtyAttributes;
 using UnityEngine;
 
 public class ProjectileController : MonoBehaviour
 {
+    [Tag]
+    public string groundTag;
+    [Tag]
+    public string damageTag;
     private float _timer;
 
     private void Update()
@@ -11,4 +16,15 @@ public class ProjectileController : MonoBehaviour
             Destroy(gameObject);
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag(groundTag))
+        {
+            Destroy(gameObject);
+        }
+        else if (other.CompareTag(damageTag))
+        {
+            Debug.Log("Not Implemented");
+        }
+    }
 }
