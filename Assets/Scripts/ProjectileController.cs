@@ -25,6 +25,7 @@ public class ProjectileController : MonoBehaviour
         else if (other.CompareTag(damageTag))
         {
             Debug.Log("Not Implemented");
+            Destroy(gameObject);
         }
     }
 }
