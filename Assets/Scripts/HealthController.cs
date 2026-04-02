@@ -15,8 +15,6 @@ public class HealthController : MonoBehaviour
     public bool isInvincible;
     [BoxGroup("Invincibility")]
     public float invincibilityTime;
-    
-    public static HealthController Instance { get; private set; }
 
     public delegate void OnPlayerDamage();
     public static event OnPlayerDamage onPlayerDamage;
@@ -29,7 +27,6 @@ public class HealthController : MonoBehaviour
     
     void Awake()
     {
-        Singleton();
     }
 
     void TakeDamage(float damage, bool isTrueDamage = false)
@@ -61,17 +58,5 @@ public class HealthController : MonoBehaviour
     void RemoveInvincibility()
     {
         isInvincible = false;
-    }
-
-    void Singleton()
-    {
-        if (Instance !=null && Instance != this)
-        {
-            Destroy(this);
-        }
-        else
-        {
-            Instance = this;
-        }
     }
 }

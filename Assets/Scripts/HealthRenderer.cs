@@ -66,9 +66,9 @@ public class HealthRenderer : MonoBehaviour
             }
         }
         
-        _bar.fillAmount = HealthController.Instance.currentHealth / HealthController.Instance.maxHealth;
+        _bar.fillAmount = PlayerInstance.healthController.currentHealth / PlayerInstance.healthController.maxHealth;
         
-        _text.text = HealthController.Instance.currentHealth.ToString("F0") + " / " + HealthController.Instance.maxHealth.ToString("F0");
+        _text.text = PlayerInstance.healthController.currentHealth.ToString("F0") + " / " + PlayerInstance.healthController.maxHealth.ToString("F0");
     }
     
     
