@@ -7,10 +7,10 @@ public class HealthController : MonoBehaviour
     public float currentHealth;
     [BoxGroup("Health")]
     public float maxHealth;
-    [BoxGroup("Defence")]
+    [BoxGroup("Defense")]
     public float damageResistance;
-    [BoxGroup("Defence")]
-    public float defence;
+    [BoxGroup("Defense")]
+    public float defense;
     [BoxGroup("Invincibility")]
     public bool isInvincible;
     [BoxGroup("Invincibility")]
@@ -29,7 +29,7 @@ public class HealthController : MonoBehaviour
     {
     }
 
-    void TakeDamage(float damage, bool isTrueDamage = false)
+    public void TakeDamage(float damage, bool isTrueDamage = false)
     {
         if (!isInvincible)
         {
@@ -40,21 +40,37 @@ public class HealthController : MonoBehaviour
             }
             else
             {
-                finalDamage = Mathf.Clamp(damage - defence, 1, 100000) *
-                              (1 - Mathf.Clamp(damageResistance, -1000, 99f)/100);
+                finalDamage = Mathf.Clamp(damage - defense, 1, 100000) * (1 - Mathf.Clamp(damageResistance, -1000, 99f)/100);
                 
             }
             isInvincible = true;
             Invoke(nameof(RemoveInvincibility), invincibilityTime);
+            
+            currentHealth -= finalDamage;
+            if(currentHealth < 0)
+            {
+                Death();
+            }
+
+
             onPlayerDamage?.Invoke();
         }
     }
-    void Heal(float healAmount)
+    public void Heal(float healAmount)
     {
         if (healAmount + currentHealth > maxHealth) currentHealth = maxHealth;
         else currentHealth += healAmount;
         onPlayerHeal?.Invoke();
     }
+
+    public void Death()
+    {
+        currentHealth = 0;
+        onPlayerDeath?.Invoke();
+        print("im dead");
+    }
+
+
     void RemoveInvincibility()
     {
         isInvincible = false;
