@@ -2371,7 +2371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 314a4f7a3adae084392edc52e02bf619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  _sensitivity: 50
+  _sensitivity: 20
   _angleClamp: {x: 0, y: 50}
   _pivot: {fileID: 754803764}
   _cameraFollowPoint: {fileID: 300308520}
@@ -2450,6 +2450,9 @@ MonoBehaviour:
   cooldown: 2
   numberOfProjectiles: 1.5
   bulletPower: 40
+  _hasAutoTarget: 0
+  _autoTargetTag: 
+  _splitTargetWithMultipleShots: 0
   _projectilePrefab: {fileID: 8910999014129750127, guid: 977443a476671614ab9b27a0a4184728, type: 3}
   _projectileSpawnPoint: {fileID: 1543657480}
   _currentCooldown: 0
