@@ -13,7 +13,6 @@ public class PlayerDamageDealer : MonoBehaviour
     {
         if(other.CompareTag(playerTag))
         {
-            print("boot");
             PlayerInstance.healthController.TakeDamage(damage,isTrueDamage);
         }
     }

@@ -47,7 +47,8 @@ public class HealthController : MonoBehaviour
             Invoke(nameof(RemoveInvincibility), invincibilityTime);
             
             currentHealth -= finalDamage;
-            if(currentHealth < 0)
+            
+            if(currentHealth <= 0)
             {
                 Death();
             }
