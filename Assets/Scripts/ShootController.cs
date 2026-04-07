@@ -4,9 +4,9 @@ using Random = UnityEngine.Random;
 
 public class ShootController : MonoBehaviour
 {
-    public float cooldown;
+    public float fireRate;
     public float numberOfProjectiles;
-    public float bulletPower;
+    public float projectileSpeed;
     [SerializeField]
     private bool _hasAutoTarget;
     [SerializeField,Tag,ShowIf("_hasAutoTarget")]
@@ -23,7 +23,7 @@ public class ShootController : MonoBehaviour
     private void Update()
     {
         _currentCooldown += Time.deltaTime;
-        if (_currentCooldown >= 1/cooldown)
+        if (_currentCooldown >= 1/fireRate)
         {
             InstantiateBullets();
             _currentCooldown = 0;
@@ -47,7 +47,7 @@ public class ShootController : MonoBehaviour
         for (int i = 0; i < RandomRound(numberOfProjectiles) ; i++)
         {
             GameObject instantiate = Instantiate(_projectilePrefab, _projectileSpawnPoint.position, Quaternion.identity);
-            instantiate.GetComponent<Rigidbody>().AddForce(targetDirection * bulletPower, ForceMode.Impulse);
+            instantiate.GetComponent<Rigidbody>().AddForce(targetDirection * projectileSpeed, ForceMode.Impulse);
         }
     }
     

@@ -2505,7 +2505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72f24a0caa0cba747973a1115fb28271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShootController
-  cooldown: 1
+  fireRate: 2
   numberOfProjectiles: 1
   bulletPower: 40
   _hasAutoTarget: 1
@@ -2532,6 +2532,8 @@ MonoBehaviour:
   defense: 0
   isInvincible: 0
   invincibilityTime: 1
+  healRate: 0
+  healAmount: 0
 --- !u!114 &1110371992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2556,10 +2558,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a31d145545cbc324aa65f5c799bd00d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  baseExpMultiplier: 0
-  baseMoveSpeed: 1
-  baseGravityForce: -9.8
-  baseJumpForce: 0
+  _basePlayerStats:
+    expMultiplier: 1
+    moneyMultiplier: 1
+    moveSpeed: 5
+    gravityForce: -18
+    jumpForce: 3
+    fireRate: 2
+    fireRateMultiplier: 1
+    numberOfProjectile: 1
+    porojectileSpeed: 40
+    critRate: 50
+    critDamage: 50
+    damage: 1
+    damageMultiplier: 2
+    maxHealth: 20
+    maxHealthMultiplier: 1
+    defense: 0
+    defenseMultiplier: 1
+    dmgResistance: 0
+    dmgResistanceMultiplier: 1
+    healRate: 0
+    healAmount: 0
+    invincibleTime: 0
+  playerStats:
+    expMultiplier: 0
+    moneyMultiplier: 0
+    moveSpeed: 0
+    gravityForce: 0
+    jumpForce: 0
+    fireRate: 0
+    fireRateMultiplier: 0
+    numberOfProjectile: 0
+    porojectileSpeed: 0
+    critRate: 0
+    critDamage: 0
+    damage: 0
+    damageMultiplier: 0
+    maxHealth: 0
+    maxHealthMultiplier: 0
+    defense: 0
+    defenseMultiplier: 0
+    dmgResistance: 0
+    dmgResistanceMultiplier: 0
+    healRate: 0
+    healAmount: 0
+    invincibleTime: 0
 --- !u!1 &1168082575
 GameObject:
   m_ObjectHideFlags: 0

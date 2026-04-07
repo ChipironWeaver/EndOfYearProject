@@ -16,6 +16,11 @@ public class HealthController : MonoBehaviour
     [BoxGroup("Invincibility")]
     public float invincibilityTime;
 
+    [BoxGroup("Auto Heal")] 
+    public float healRate;
+    [BoxGroup("Auto Heal")]
+    public float healAmount;
+
     public delegate void OnPlayerDamage();
     public static event OnPlayerDamage onPlayerDamage;
     
@@ -24,9 +29,17 @@ public class HealthController : MonoBehaviour
     
     public delegate void OnPlayerDeath();
     public static event OnPlayerDeath onPlayerDeath;
+
+    private float _currentCooldown;
     
-    void Awake()
+    void Update()
     {
+        _currentCooldown += Time.deltaTime;
+        if (_currentCooldown >= 1/healRate)
+        {
+            Heal(healAmount);
+            _currentCooldown = 0;
+        }
     }
 
     public void TakeDamage(float damage, bool isTrueDamage = false)

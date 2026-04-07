@@ -6,6 +6,8 @@ public class PlayerInstance : MonoBehaviour
     public static ShootController shootController;
     public static HealthController healthController;
     public static ProjectileController projectileController;
+    public static PlayerStatisticController playerStatisticController;
+    public static PlayerMovementController playerMovementController;
 
     void Awake()
     {
@@ -17,7 +19,8 @@ public class PlayerInstance : MonoBehaviour
         shootController = GetComponent<ShootController>();
         healthController = GetComponent<HealthController>();
         projectileController = GetComponent<ProjectileController>();
-        
+        playerStatisticController = GetComponent<PlayerStatisticController>();
+        playerMovementController = GetComponent<PlayerMovementController>();
     }
     void Singleton()
     {
