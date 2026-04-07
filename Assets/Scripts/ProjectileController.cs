@@ -7,7 +7,29 @@ public class ProjectileController : MonoBehaviour
     public string groundTag;
     [Tag]
     public string damageTag;
+
+    public float damage;
+
+    public bool isPiercing;
+
+    [SerializeField]
+    private bool isPiercingOveride;
+
+    [SerializeField] private float _damageCooldown = 0.5f;
+
+    private bool _canDamage;
+    
+
+    private float _lastDamage = 0;
+
     private float _timer;
+
+    private void Start()
+    {
+        _lastDamage -= _damageCooldown;
+    }
+
+
 
     private void Update()
     {
@@ -18,13 +40,22 @@ public class ProjectileController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag(groundTag))
+        if (other.CompareTag(damageTag) && _timer > _lastDamage + _damageCooldown)
         {
-            Destroy(gameObject);
+            other.GetComponent<EnemyHealthManager>().TakeDamage(damage);
+            if(!(isPiercing | isPiercingOveride))
+            {
+                Destroy(gameObject);
+            }
+            
+            _lastDamage = _timer;
         }
-        else if (other.CompareTag(damageTag))
+    }
+    
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag(groundTag))
         {
-            Debug.Log("Not Implemented");
             Destroy(gameObject);
         }
     }

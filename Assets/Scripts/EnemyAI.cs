@@ -3,8 +3,8 @@ using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
-    NavMeshAgent _agent;
-    Transform _target;
+    private NavMeshAgent _agent;
+    private Transform _target;
     void Start()
     {
         _agent = GetComponent<NavMeshAgent>();
