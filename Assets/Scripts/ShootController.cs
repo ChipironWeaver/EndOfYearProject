@@ -23,7 +23,7 @@ public class ShootController : MonoBehaviour
     private void Update()
     {
         _currentCooldown += Time.deltaTime;
-        if (_currentCooldown >= cooldown)
+        if (_currentCooldown >= 1/cooldown)
         {
             InstantiateBullets();
             _currentCooldown = 0;
