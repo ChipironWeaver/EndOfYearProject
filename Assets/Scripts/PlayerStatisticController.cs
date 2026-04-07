@@ -39,9 +39,7 @@ public class PlayerStatisticController : MonoBehaviour
         if (playerStats.critRate > Random.Range(0, 100))
         {
             damage *= 1 + playerStats.critDamage / 100;
-            print("crit!");
         }
-        print(damage);
         return damage;
     }
 }
