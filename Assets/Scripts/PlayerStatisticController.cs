@@ -1,5 +1,7 @@
+using System;
 using NaughtyAttributes;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class PlayerStatisticController : MonoBehaviour
 {
@@ -9,12 +11,18 @@ public class PlayerStatisticController : MonoBehaviour
     private void Awake()
     {
         ResetStats();
+        
+    }
+
+    public void Start()
+    {
         ApplyStatsOnComponent();
     }
-    
+
     public void ResetStats()
     {
         playerStats = _basePlayerStats;
+        
     }
 
     public void ApplyStatsOnComponent()

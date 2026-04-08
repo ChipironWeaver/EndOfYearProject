@@ -39,11 +39,7 @@ public class ProjectileController : MonoBehaviour
             }
             _lastDamage = _timer;
         }
-    }
-    
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag(groundTag))
+        if (other.CompareTag(groundTag))
         {
             Destroy(gameObject);
         }

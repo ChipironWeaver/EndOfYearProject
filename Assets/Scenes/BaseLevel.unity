@@ -2507,7 +2507,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShootController
   fireRate: 2
   numberOfProjectiles: 1
-  bulletPower: 40
+  projectileSpeed: 0
   _hasAutoTarget: 1
   _autoTargetTag: Enemy
   _splitTargetWithMultipleShots: 0
@@ -2567,7 +2567,8 @@ MonoBehaviour:
     fireRate: 2
     fireRateMultiplier: 1
     numberOfProjectile: 1
-    porojectileSpeed: 40
+    projectileSpeed: 40
+    isPiercing: 0
     critRate: 50
     critDamage: 50
     damage: 1
@@ -2590,7 +2591,8 @@ MonoBehaviour:
     fireRate: 0
     fireRateMultiplier: 0
     numberOfProjectile: 0
-    porojectileSpeed: 0
+    projectileSpeed: 0
+    isPiercing: 0
     critRate: 0
     critDamage: 0
     damage: 0
