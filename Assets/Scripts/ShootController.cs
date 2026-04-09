@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using NaughtyAttributes;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -53,8 +54,8 @@ public class ShootController : MonoBehaviour
     
     public GameObject FindOneClosestEnemy()
     {
-        GameObject[] gos;
-        gos = GameObject.FindGameObjectsWithTag(_autoTargetTag);
+        List<GameObject> gos;
+        gos = EnemySpawner.Instance.enemies;
         GameObject closest = null;
         float distance = Mathf.Infinity;
         Vector3 position = transform.position;
