@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 public class EnemySpawner : MonoBehaviour
@@ -33,9 +34,9 @@ public class EnemySpawner : MonoBehaviour
 
     //Waves Data
     [ReadOnly,SerializeField]
-    private int _currentWave;
+    public int currentWave;
     [ReadOnly,SerializeField]
-    private float _currentWaveTime;
+    public float currentWaveTime;
     [ReadOnly,SerializeField]
     private float _currentSpawnCooldown;
     [ReadOnly,SerializeField]
@@ -69,12 +70,12 @@ public class EnemySpawner : MonoBehaviour
         if (waveCount >= waveAmount)
         {
             // Next Wave Check
-            _currentWaveTime += Time.deltaTime;
+            currentWaveTime += Time.deltaTime;
             if (enemies.Count <= 0 && _enemiesNeeded <= 0)
             {
                 NextWave();
             }
-            else if (_currentWaveTime > EvaluateVector2(waveTimeRange, waveTime.Evaluate(_currentWave)))
+            else if (currentWaveTime > EvaluateVector2(waveTimeRange, waveTime.Evaluate(currentWave)))
             {
                 NextWave();
             }
@@ -125,10 +126,10 @@ public class EnemySpawner : MonoBehaviour
     
     private void NextWave()
     {
-        _currentWave++;
-        _currentWaveTime = 0f;
+        currentWave++;
+        currentWaveTime = 0f;
         _currentSpawnCooldown = 0f;
-        _enemiesNeeded += (int)EvaluateVector2(enemyAmountRange , enemyAmount.Evaluate(_currentWave / (float)waveAmount));
+        _enemiesNeeded += (int)EvaluateVector2(enemyAmountRange , enemyAmount.Evaluate(currentWave / (float)waveAmount));
     }
     
     
@@ -139,7 +140,7 @@ public class EnemySpawner : MonoBehaviour
         float targetedWeight = Random.Range(0,FindCurrentWeight());
         foreach (EnemyWeight enemy in enemiesPrefab)
         {
-            weight += enemy.weightCurve.Evaluate(_currentWave / (float)waveAmount);
+            weight += enemy.weightCurve.Evaluate(currentWave / (float)waveAmount);
             if (targetedWeight < weight)
             {
                 findEnemy = enemy;
@@ -149,7 +150,7 @@ public class EnemySpawner : MonoBehaviour
         return findEnemy;
     }
     
-    private float EvaluateVector2(Vector2 vector2, float value)
+    public float EvaluateVector2(Vector2 vector2, float value)
     {
         float returnValue = vector2.x + (vector2.y - vector2.x) * value;
         return returnValue;
@@ -160,7 +161,7 @@ public class EnemySpawner : MonoBehaviour
         float weight = 0;
         foreach (EnemyWeight enemy in enemiesPrefab)
         {
-            weight += enemy.weightCurve.Evaluate(_currentWave / (float)waveAmount);
+            weight += enemy.weightCurve.Evaluate(currentWave / (float)waveAmount);
         }
         return weight;
     }
