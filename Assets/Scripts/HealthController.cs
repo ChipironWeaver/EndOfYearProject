@@ -7,6 +7,8 @@ public class HealthController : MonoBehaviour
     public float currentHealth;
     [BoxGroup("Health")]
     public float maxHealth;
+    [BoxGroup("Health")]
+    public MaxHealthChangeBehavior maxHealthChangeBehavior;
     [BoxGroup("Defense")]
     public float damageResistance;
     [BoxGroup("Defense")]
@@ -84,9 +86,46 @@ public class HealthController : MonoBehaviour
         print("im dead");
     }
 
+    public void SetMaxHealth(float newMaxHealth)
+    {
+        if (maxHealth > newMaxHealth)
+        {
+            onPlayerDamage?.Invoke();
+        }
+        else if (maxHealth < newMaxHealth)
+        {
+            onPlayerHeal?.Invoke();
+        }
+        else
+        {
+            maxHealth = newMaxHealth;
+            return;
+        }
+
+        if (maxHealthChangeBehavior == MaxHealthChangeBehavior.AddNewAmount)
+        {
+            currentHealth += newMaxHealth - maxHealth;
+        }
+        else if (maxHealthChangeBehavior == MaxHealthChangeBehavior.BasedOnPercentage)
+        {
+            currentHealth = currentHealth / maxHealth * newMaxHealth;
+        }
+        else
+        {
+            currentHealth = Mathf.Clamp(currentHealth, 0, newMaxHealth);
+        }
+        maxHealth = newMaxHealth;
+    }
 
     void RemoveInvincibility()
     {
         isInvincible = false;
     }
+}
+
+public enum MaxHealthChangeBehavior
+{
+    AddNewAmount,
+    BasedOnPercentage,
+    DontChange
 }

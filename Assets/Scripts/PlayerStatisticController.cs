@@ -33,7 +33,7 @@ public class PlayerStatisticController : MonoBehaviour
         PlayerInstance.shootController.fireRate = playerStats.fireRate * playerStats.fireRateMultiplier;
         PlayerInstance.shootController.numberOfProjectiles = playerStats.numberOfProjectile;
         PlayerInstance.shootController.projectileSpeed = playerStats.projectileSpeed;
-        PlayerInstance.healthController.maxHealth = playerStats.maxHealth * playerStats.maxHealthMultiplier;
+        PlayerInstance.healthController.SetMaxHealth(playerStats.maxHealth * playerStats.maxHealthMultiplier); 
         PlayerInstance.healthController.defense = playerStats.defense * playerStats.defenseMultiplier;
         PlayerInstance.healthController.damageResistance = playerStats.dmgResistance * playerStats.dmgResistanceMultiplier;
         PlayerInstance.healthController.healRate = playerStats.healRate;

@@ -2536,11 +2536,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebd9f608aff6a4945a344f6d6a34c6ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  currentHealth: 25
+  currentHealth: 30
   maxHealth: 30
+  maxHealthChangeBehavior: 0
   damageResistance: 0
   defense: 0
-  isInvincible: 1
+  isInvincible: 0
   invincibilityTime: 1
   healRate: 0
   healAmount: 0
@@ -4676,7 +4677,7 @@ MonoBehaviour:
       m_RotationOrder: 0
     space: 1
   _spawnTries: 2
-  spawnDistance: 5
+  spawnDistance: 7
   waveAmount: 30
   enemyAmount:
     serializedVersion: 2
@@ -4711,7 +4712,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  enemyAmountRange: {x: 5, y: 100}
+  enemyAmountRange: {x: 10, y: 200}
   waveTime:
     serializedVersion: 2
     m_Curve:
@@ -4764,8 +4765,8 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   waveTimeRange: {x: 60, y: 150}
-  waveCount: 50
-  spawnCooldown: 0.5
+  waveCount: 30
+  spawnCooldown: 0.25
   _currentWave: 0
   _currentWaveTime: 0
   _currentSpawnCooldown: 0

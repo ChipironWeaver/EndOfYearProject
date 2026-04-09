@@ -86,6 +86,7 @@ public class EnemySpawner : MonoBehaviour
                 if (_currentSpawnCooldown >= spawnCooldown)
                 {
                     SpawnEnemy();
+                    _currentSpawnCooldown = 0;
                 }
             }
         }
