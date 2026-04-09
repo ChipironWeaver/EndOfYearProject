@@ -38,6 +38,7 @@ public class EnemyHealthManager : MonoBehaviour
 
     public void Death()
     {
+        EnemySpawner.Instance.enemies.Remove(this.gameObject);
         Destroy(this.gameObject);
     }
 

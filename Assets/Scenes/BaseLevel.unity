@@ -2540,7 +2540,7 @@ MonoBehaviour:
   maxHealth: 30
   damageResistance: 0
   defense: 0
-  isInvincible: 0
+  isInvincible: 1
   invincibilityTime: 1
   healRate: 0
   healAmount: 0
@@ -2580,9 +2580,9 @@ MonoBehaviour:
     projectileSpeed: 40
     isPiercing: 0
     critRate: 50
-    critDamage: 50
-    damage: 1
-    damageMultiplier: 2
+    critDamage: 200
+    damage: 20
+    damageMultiplier: 1
     maxHealth: 20
     maxHealthMultiplier: 1
     defense: 0
@@ -4553,32 +4553,128 @@ MonoBehaviour:
   spawnPoints: []
   enemies: []
   enemiesPrefab:
-  - prefab: {fileID: 0}
+  - prefab: {fileID: 1169681921209196131, guid: 033111a9b571aa24b8eafd1aa17b5968, type: 3}
     weightCurve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0
-        inSlope: 50
-        outSlope: 50
+        value: 29.468084
+        inSlope: -26.855953
+        outSlope: -26.855953
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
-        outWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.23298351
+        value: 23.21109
+        inSlope: -97.241135
+        outSlope: -97.241135
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.15411852
+        outWeight: 0.061594617
       - serializedVersion: 3
         time: 1
-        value: 50
-        inSlope: 50
-        outSlope: 50
-        tangentMode: 34
+        value: 0
+        inSlope: -7.0554
+        outSlope: -7.0554
+        tangentMode: 0
         weightedMode: 0
-        inWeight: 0
+        inWeight: 0.08949488
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    space: 5
+    space: 1
+  - prefab: {fileID: 1169681921209196131, guid: a999d48050410004d8fbc6de9915be32, type: 3}
+    weightCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 9.999998
+        inSlope: -0.0000009536743
+        outSlope: -0.0000009536743
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 9.999997
+        inSlope: -0.0000009536743
+        outSlope: -0.0000009536743
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    space: 1
+  - prefab: {fileID: 1169681921209196131, guid: da4e57c0159ed3146914f56443a6f679, type: 3}
+    weightCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.15788443
+        value: 0
+        inSlope: 16.45081
+        outSlope: 16.45081
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.08447066
+      - serializedVersion: 3
+        time: 1
+        value: 29.893616
+        inSlope: 112.180756
+        outSlope: 112.180756
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.04729673
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    space: 1
+  - prefab: {fileID: 1169681921209196131, guid: abfd9128a8f9a224c81d634b98512a87, type: 3}
+    weightCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 4.680847
+        inSlope: -11.627452
+        outSlope: -11.627452
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.4025686
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    space: 1
   _spawnTries: 2
   spawnDistance: 5
   waveAmount: 30
@@ -4670,6 +4766,10 @@ MonoBehaviour:
   waveTimeRange: {x: 60, y: 150}
   waveCount: 50
   spawnCooldown: 0.5
+  _currentWave: 0
+  _currentWaveTime: 0
+  _currentSpawnCooldown: 0
+  _enemiesNeeded: 0
 --- !u!1 &2017667889
 GameObject:
   m_ObjectHideFlags: 0

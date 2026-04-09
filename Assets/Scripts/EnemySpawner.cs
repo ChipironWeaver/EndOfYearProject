@@ -32,9 +32,13 @@ public class EnemySpawner : MonoBehaviour
     private Transform _enemyParent;
 
     //Waves Data
+    [ReadOnly,SerializeField]
     private int _currentWave;
+    [ReadOnly,SerializeField]
     private float _currentWaveTime;
+    [ReadOnly,SerializeField]
     private float _currentSpawnCooldown;
+    [ReadOnly,SerializeField]
     private int _enemiesNeeded;
     
     public static EnemySpawner Instance { get; private set; }
@@ -56,13 +60,16 @@ public class EnemySpawner : MonoBehaviour
         instantiate.transform.position = Vector3.zero;
         instantiate.name = "EnemyParent";
         _enemyParent = instantiate.transform;
+        
+        NextWave();
     }
 
     void Update()
     {
-        if (waveCount <= waveAmount)
+        if (waveCount >= waveAmount)
         {
             // Next Wave Check
+            _currentWaveTime += Time.deltaTime;
             if (enemies.Count <= 0 && _enemiesNeeded <= 0)
             {
                 NextWave();
@@ -112,6 +119,7 @@ public class EnemySpawner : MonoBehaviour
         GameObject instantiate = Instantiate(enemy.prefab, spawnPoint.position, spawnPoint.rotation);
         instantiate.transform.parent = _enemyParent;
         _enemiesNeeded -= enemy.space;
+        enemies.Add(instantiate);
     }
     
     private void NextWave()
@@ -122,18 +130,19 @@ public class EnemySpawner : MonoBehaviour
         _enemiesNeeded += (int)EvaluateVector2(enemyAmountRange , enemyAmount.Evaluate(_currentWave / (float)waveAmount));
     }
     
+    
     private EnemyWeight FindEnemy()
     {
         float weight = 0;
         EnemyWeight findEnemy = null;
         float targetedWeight = Random.Range(0,FindCurrentWeight());
-
         foreach (EnemyWeight enemy in enemiesPrefab)
         {
             weight += enemy.weightCurve.Evaluate(_currentWave / (float)waveAmount);
             if (targetedWeight < weight)
             {
                 findEnemy = enemy;
+                break;
             }
         }
         return findEnemy;
