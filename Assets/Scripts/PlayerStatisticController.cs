@@ -22,7 +22,6 @@ public class PlayerStatisticController : MonoBehaviour
     public void ResetStats()
     {
         playerStats = _basePlayerStats;
-        
     }
 
     public void ApplyStatsOnComponent()

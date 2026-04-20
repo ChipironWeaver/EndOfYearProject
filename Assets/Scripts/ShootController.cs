@@ -37,7 +37,7 @@ public class ShootController : MonoBehaviour
         if (_hasAutoTarget)
         {
             GameObject target = FindOneClosestEnemy();
-            if (target != null)
+            if (target)
             {
                 targetDirection = target.transform.position - _projectileSpawnPoint.position;
                 targetDirection.Normalize();
