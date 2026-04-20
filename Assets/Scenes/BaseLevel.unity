@@ -2979,12 +2979,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcfe1509decac2f408732696dd09c53f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  expPerLevel:
+  expRequirementPetLevel:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 58.324223
+      outSlope: 58.324223
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.083455205
+    - serializedVersion: 3
+      time: 10.055479
+      value: 995.51794
+      inSlope: 129.80602
+      outSlope: 129.80602
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.16844462
+      outWeight: 0.19724958
+    - serializedVersion: 3
+      time: 50.007072
+      value: 24847.686
+      inSlope: 1599.5623
+      outSlope: 1599.5623
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.04415245
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 100
+      value: 200000
+      inSlope: 5587.9136
+      outSlope: 5587.9136
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.07670702
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  currentExp: 0
+  currentLevel: 0
+  expMultiplier: 0
+  _expTester: 10
 --- !u!1 &1145551267
 GameObject:
   m_ObjectHideFlags: 0

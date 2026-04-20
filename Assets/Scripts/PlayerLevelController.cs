@@ -1,8 +1,48 @@
 using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerLevelController : MonoBehaviour
 {
-    [CurveRange(0,0,200000,100)]
-    public AnimationCurve expPerLevel;
+    [CurveRange(0,0,100,200000)]
+    public AnimationCurve expRequirementPetLevel;
+    public float currentExp;
+    public int currentLevel;
+    public float expMultiplier;
+
+    [SerializeField] private float _expTester;
+    
+    
+    public delegate void OnPlayerExpGained();
+    public static event OnPlayerExpGained onPlayerExpGained;
+    public delegate void OnPlayerLeveling(bool isStart);
+    public static event OnPlayerLeveling onPlayerLeveling;
+
+    public void Start()
+    {
+        /*for(int i = 1; i < 100; i++)
+        {
+            if(i >1) print( i+" : " +expRequirementPetLevel.Evaluate(i) +" + " + (expRequirementPetLevel.Evaluate(i) - expRequirementPetLevel.Evaluate(i-1)));
+            else print(expRequirementPetLevel.Evaluate(i));
+        }*/
+    }
+    
+    
+    public int ChangeExp(float exp)
+    {
+        currentExp += exp * expMultiplier;
+        while (currentExp >= expRequirementPetLevel.Evaluate(currentLevel + 1))
+        {
+            currentLevel++;
+            print("level up to  " + currentLevel);
+        }
+        onPlayerExpGained?.Invoke();
+        return currentLevel;
+    }
+
+    [Button]
+    public void Test()
+    {
+        ChangeExp(_expTester);
+    }
 }

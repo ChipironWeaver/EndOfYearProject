@@ -29,15 +29,19 @@ public class PlayerStatisticController : MonoBehaviour
         PlayerInstance.playerMovementController.moveSpeed = playerStats.moveSpeed;
         PlayerInstance.playerMovementController.gravityForce = playerStats.gravityForce;
         PlayerInstance.playerMovementController.jumpForce = playerStats.jumpForce;
+        
         PlayerInstance.shootController.fireRate = playerStats.fireRate * playerStats.fireRateMultiplier;
         PlayerInstance.shootController.numberOfProjectiles = playerStats.numberOfProjectile;
         PlayerInstance.shootController.projectileSpeed = playerStats.projectileSpeed;
+        
         PlayerInstance.healthController.SetMaxHealth(playerStats.maxHealth * playerStats.maxHealthMultiplier); 
         PlayerInstance.healthController.defense = playerStats.defense * playerStats.defenseMultiplier;
         PlayerInstance.healthController.damageResistance = playerStats.dmgResistance * playerStats.dmgResistanceMultiplier;
         PlayerInstance.healthController.healRate = playerStats.healRate;
         PlayerInstance.healthController.healAmount = playerStats.healAmount;
         PlayerInstance.healthController.invincibilityTime = playerStats.invincibleTime;
+        
+        PlayerInstance.playerLevelController.expMultiplier = playerStats.expMultiplier;
     }
 
     public float GetDamage()

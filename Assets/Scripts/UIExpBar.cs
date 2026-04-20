@@ -28,8 +28,24 @@ public class UIExpBar : MonoBehaviour
     [SerializeField] private Ease _flashEaseType;
     
     private SlicedImage _image;
+    
     private Sequence _baseColorSequence;
     private Sequence _levelUpSequence;
+
+    private void OnEnable()
+    {
+        PlayerLevelController.onPlayerExpGained += UpdateBar;
+        PlayerLevelController.onPlayerExpGained += Flash;
+        
+    }
+
+    private void OnDisable()
+    {
+        PlayerLevelController.onPlayerExpGained -= UpdateBar;
+        PlayerLevelController.onPlayerExpGained -= Flash;
+    }
+    
+    
     private void Start()
     {
         _image = GetComponent<SlicedImage>();
@@ -49,10 +65,10 @@ public class UIExpBar : MonoBehaviour
         _levelUpSequence.SetLoops(-1);
         _levelUpSequence.Pause();
         _image.color = _baseColors[^1];
+        _image.fillAmount = 0;
     }
-
-    [Button]
-    public void Flash()
+    
+    private void Flash()
     {
         _baseColorSequence.Pause();
         Sequence flashSequence = DOTween.Sequence();
@@ -61,17 +77,32 @@ public class UIExpBar : MonoBehaviour
         _baseColorSequence.Play();
     }
     
-    [Button]
-    public void LevelUp()
+    private void LevelUp(bool isStart)
     {
-        _baseColorSequence.Pause();
-        _image.color = _levelUpColors[^1];
-        _levelUpSequence.Restart();
+        if(isStart)
+        {
+            _image.fillAmount = 1;
+            _baseColorSequence.Pause();
+            _levelUpSequence.Restart();
+        }
+        else
+        {
+            _levelUpSequence.Pause();
+            UpdateBar();
+            _baseColorSequence.Restart();
+        }
     }
+
     [Button]
-    public void Normal()
+    private void UpdateBar()
     {
-        _levelUpSequence.Pause();
-        _baseColorSequence.Restart();
+        AnimationCurve levelCurve = PlayerInstance.playerLevelController.expRequirementPetLevel;
+        int currentLevel = PlayerInstance.playerLevelController.currentLevel;
+        float currentExp =  PlayerInstance.playerLevelController.currentExp;
+        float fillAmount = (currentExp - levelCurve.Evaluate(currentLevel)) / (levelCurve.Evaluate(currentLevel + 1) - levelCurve.Evaluate(currentLevel));
+        _image.fillAmount = fillAmount;
+        print(currentExp - levelCurve.Evaluate(currentLevel));
+        print(levelCurve.Evaluate(currentLevel + 1) - levelCurve.Evaluate(currentLevel));
+        print(_image.fillAmount + " ~ " + fillAmount);
     }
 }
