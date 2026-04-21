@@ -1,5 +1,6 @@
 using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class EnemyHealthManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class EnemyHealthManager : MonoBehaviour
     public float damageResistance;
     [BoxGroup("Defense")]
     public float defense;
+    public UnityEvent OnDeath;
     public void TakeDamage(float damage, bool isTrueDamage = false)
     {
         float finalDamage = 0;
@@ -38,6 +40,7 @@ public class EnemyHealthManager : MonoBehaviour
 
     public void Death()
     {
+        OnDeath?.Invoke();
         EnemySpawner.Instance.enemies.Remove(this.gameObject);
         Destroy(this.gameObject);
     }
