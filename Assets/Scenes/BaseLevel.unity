@@ -2931,9 +2931,9 @@ MonoBehaviour:
     numberOfProjectile: 1
     projectileSpeed: 40
     isPiercing: 0
-    critRate: 50
-    critDamage: 200
-    damage: 20
+    critRate: 10
+    critDamage: 100
+    damage: 5
     damageMultiplier: 1
     maxHealth: 20
     maxHealthMultiplier: 1
@@ -5154,7 +5154,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1878214129}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f03f2ea9fc10487459cb610733d971f8, type: 3}
   m_Name: 
