@@ -54,3 +54,33 @@ public class PlayerStatisticController : MonoBehaviour
         return damage;
     }
 }
+[Flags]
+public enum StatType
+{
+    None = 0,
+    ExpMultiplier = 1 << 0,
+    MoneyMultiplier = 1 << 1,
+    EnemyDropFollowRange= 1 << 2,
+    MoveSpeed= 1 << 3,
+    GravityForce= 1 << 4,
+    JumpForce= 1 << 5,
+    FireRate= 1 << 6,
+    FireRateMultiplier= 1 << 7,
+    NumberOfProjectile= 1 << 8,
+    ProjectileSpeed= 1 << 9,
+    Piercing= 1 << 10,
+    CritRate= 1 << 11,
+    CritDamage= 1 << 12,
+    Damage= 1 << 13,
+    DamageMultiplier= 1 << 14,
+    MaxHealth= 1 << 15,
+    MaxHealthMultiplier= 1 << 16,
+    Defense= 1 << 17,
+    DefenseMultiplier= 1 << 18,
+    DmgResistance= 1 << 19,
+    DmgResistanceMultiplier= 1 << 20,
+    HealRate= 1 << 21,
+    HealAmount= 1 << 22,
+    InvincibleTime= 1 << 23,
+    
+}
