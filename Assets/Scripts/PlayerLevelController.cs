@@ -10,7 +10,6 @@ public class PlayerLevelController : MonoBehaviour
     public int currentLevel;
     public float expMultiplier;
 
-    [SerializeField] private float _expTester;
     
     
     public delegate void OnPlayerExpGained();
@@ -28,7 +27,7 @@ public class PlayerLevelController : MonoBehaviour
     }
     
     
-    public int ChangeExp(float exp)
+    public void ChangeExp(float exp)
     {
         currentExp += exp * expMultiplier;
         while (currentExp >= expRequirementPetLevel.Evaluate(currentLevel + 1))
@@ -37,12 +36,6 @@ public class PlayerLevelController : MonoBehaviour
             print("level up to  " + currentLevel);
         }
         onPlayerExpGained?.Invoke();
-        return currentLevel;
-    }
-
-    [Button]
-    public void Test()
-    {
-        ChangeExp(_expTester);
+        //return currentLevel;
     }
 }

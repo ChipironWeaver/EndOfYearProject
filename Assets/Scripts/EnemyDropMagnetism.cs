@@ -25,13 +25,11 @@ public class EnemyDropMagnetism : MonoBehaviour
             {
                 if (hit.collider.CompareTag("Player"))
                 {
-                    print("i see the player");
                     _rb.linearVelocity = PlayerDirection * _moveSpeed;
                 }
                 else
                 {
-                    _rb.velocity = _rb.velocity / 2;
-                    print("i don't see player");
+                    _rb.linearVelocity = _rb.linearVelocity / 2;
                 }
             }
         }
@@ -41,7 +39,6 @@ public class EnemyDropMagnetism : MonoBehaviour
             if (Vector3.Distance(transform.position, PlayerPosition) <= _detectRange)
             {
                 _goToPlayer = true;
-                print("Go to Player");
             }
         }
     }

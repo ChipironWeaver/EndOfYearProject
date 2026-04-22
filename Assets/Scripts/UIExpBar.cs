@@ -101,8 +101,5 @@ public class UIExpBar : MonoBehaviour
         float currentExp =  PlayerInstance.playerLevelController.currentExp;
         float fillAmount = (currentExp - levelCurve.Evaluate(currentLevel)) / (levelCurve.Evaluate(currentLevel + 1) - levelCurve.Evaluate(currentLevel));
         _image.fillAmount = fillAmount;
-        print(currentExp - levelCurve.Evaluate(currentLevel));
-        print(levelCurve.Evaluate(currentLevel + 1) - levelCurve.Evaluate(currentLevel));
-        print(_image.fillAmount + " ~ " + fillAmount);
     }
 }
