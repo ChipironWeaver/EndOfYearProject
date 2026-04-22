@@ -7,29 +7,29 @@ public class PlayerStatistic
     public float expMultiplier;
     public float moneyMultiplier;
     public float enemyDropFollowRange;
-    [HorizontalLine(color: EColor.White)]
+    [Header("Movement")]
     public float moveSpeed;
     public float gravityForce;
     public float jumpForce;
-    [HorizontalLine(color: EColor.White)]
+    [Header("Projectile")]
     public float fireRate;
     public float fireRateMultiplier;
     public float numberOfProjectile;
     public float projectileSpeed;
     public bool isPiercing;
-    [HorizontalLine(color: EColor.White)]
+    [Header("Damage")]
     public float critRate;
     public float critDamage;
     public float damage;
     public float damageMultiplier;
-    [HorizontalLine(color: EColor.White)]
+    [Header("Substain")]
     public float maxHealth;
     public float maxHealthMultiplier;
     public float defense;
     public float defenseMultiplier;
     public float dmgResistance;
     public float dmgResistanceMultiplier;
-    [HorizontalLine(color: EColor.White)]
+    [Header("Over Time Heal")]
     public float healRate;
     public float healAmount;
     public float invincibleTime;
