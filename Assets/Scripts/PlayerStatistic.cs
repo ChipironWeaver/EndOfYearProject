@@ -6,6 +6,7 @@ public class PlayerStatistic
 {
     public float expMultiplier;
     public float moneyMultiplier;
+    public float enemyDropFollowRange;
     [HorizontalLine(color: EColor.White)]
     public float moveSpeed;
     public float gravityForce;
