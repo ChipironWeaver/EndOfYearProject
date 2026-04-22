@@ -6,6 +6,7 @@ using UnityEngine;
 public class Item : ScriptableObject
 {
     public string name;
+    [ResizableTextArea]
     public string description;
     public Sprite sprite;
     public ItemRarity rarity;

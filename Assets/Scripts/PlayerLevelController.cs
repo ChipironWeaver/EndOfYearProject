@@ -33,7 +33,6 @@ public class PlayerLevelController : MonoBehaviour
         while (currentExp >= expRequirementPetLevel.Evaluate(currentLevel + 1))
         {
             currentLevel++;
-            print("level up to  " + currentLevel);
         }
         onPlayerExpGained?.Invoke();
         //return currentLevel;

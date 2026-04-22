@@ -17,8 +17,9 @@ GameObject:
   - component: {fileID: 4573564018186396412}
   - component: {fileID: 3550142060467865064}
   - component: {fileID: 8889785422272500968}
+  - component: {fileID: -4459536592256156063}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Enemy1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,7 +73,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 42d9cd209d7d26e4cb8fc0c0080dc62c, type: 2}
+  - {fileID: 2100000, guid: bb5d20a9eb4390443b7dc7f385107fbb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -207,3 +208,36 @@ MonoBehaviour:
   maxHealth: 20
   damageResistance: 0
   defense: 0
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -4459536592256156063}
+        m_TargetAssemblyTypeName: RandomInstantiate, Assembly-CSharp
+        m_MethodName: InstantiateRandom
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &-4459536592256156063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169681921209196131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4720053ebccfa274eab0879e7ebb841a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  _numberRange: {x: 2.5, y: 5}
+  _prefabWeights:
+  - prefab: {fileID: 5339835109200159086, guid: 5d2c50e6a8eeb5d4da8847a765627f19, type: 3}
+    weight: 2
+  - prefab: {fileID: 5339835109200159086, guid: d7f4df901d7837d409450ee3be7017c3, type: 3}
+    weight: 3
