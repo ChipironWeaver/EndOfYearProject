@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using NaughtyAttributes;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -11,7 +12,6 @@ public class PlayerStatisticController : MonoBehaviour
     private void Awake()
     {
         ResetStats();
-        
     }
 
     public void Start()
@@ -26,6 +26,8 @@ public class PlayerStatisticController : MonoBehaviour
 
     public void ApplyStatsOnComponent()
     {
+        PlayerInstance.playerLevelController.expMultiplier = playerStats.expMultiplier;
+
         PlayerInstance.playerMovementController.moveSpeed = playerStats.moveSpeed;
         PlayerInstance.playerMovementController.gravityForce = playerStats.gravityForce;
         PlayerInstance.playerMovementController.jumpForce = playerStats.jumpForce;
@@ -37,11 +39,12 @@ public class PlayerStatisticController : MonoBehaviour
         PlayerInstance.healthController.SetMaxHealth(playerStats.maxHealth * playerStats.maxHealthMultiplier); 
         PlayerInstance.healthController.defense = playerStats.defense * playerStats.defenseMultiplier;
         PlayerInstance.healthController.damageResistance = playerStats.dmgResistance * playerStats.dmgResistanceMultiplier;
+
         PlayerInstance.healthController.healRate = playerStats.healRate;
         PlayerInstance.healthController.healAmount = playerStats.healAmount;
         PlayerInstance.healthController.invincibilityTime = playerStats.invincibleTime;
         
-        PlayerInstance.playerLevelController.expMultiplier = playerStats.expMultiplier;
+       
     }
 
     public float GetDamage()
@@ -53,7 +56,73 @@ public class PlayerStatisticController : MonoBehaviour
         }
         return damage;
     }
+
+    public void AddStats(PlayerStatistic stats,StatType statEnum)
+    {
+        if(statEnum.HasFlag(StatType.ExpMultiplier)) playerStats.expMultiplier += stats.expMultiplier;
+        if(statEnum.HasFlag(StatType.MoneyMultiplier)) playerStats.moneyMultiplier += stats.moneyMultiplier;
+        if(statEnum.HasFlag(StatType.EnemyDropFollowRange))playerStats.enemyDropFollowRange += stats.enemyDropFollowRange;
+
+        if(statEnum.HasFlag(StatType.MoveSpeed)) playerStats.moveSpeed += stats.moveSpeed;
+        if(statEnum.HasFlag(StatType.GravityForce)) playerStats.gravityForce += stats.gravityForce;
+        if(statEnum.HasFlag(StatType.JumpForce)) playerStats.jumpForce += stats.jumpForce;
+        
+        if(statEnum.HasFlag(StatType.FireRate)) playerStats.fireRate += stats.fireRate;
+        if(statEnum.HasFlag(StatType.FireRateMultiplier)) playerStats.fireRateMultiplier += stats.fireRateMultiplier;
+        if(statEnum.HasFlag(StatType.NumberOfProjectile)) playerStats.numberOfProjectile += stats.numberOfProjectile;
+        if(statEnum.HasFlag(StatType.Piercing)) playerStats.projectileSpeed += stats.projectileSpeed;
+        if(stats.isPiercing && statEnum.HasFlag(StatType.Piercing)) playerStats.isPiercing = true;
+
+        if(statEnum.HasFlag(StatType.CritRate)) playerStats.critRate += stats.critRate;
+        if(statEnum.HasFlag(StatType.CritDamage)) playerStats.critDamage += stats.critDamage;
+        if(statEnum.HasFlag(StatType.Damage)) playerStats.damage += stats.damage;
+        if(statEnum.HasFlag(StatType.DamageMultiplier)) playerStats.damageMultiplier += stats.damageMultiplier;
+
+        if(statEnum.HasFlag(StatType.MaxHealth)) playerStats.maxHealth += stats.maxHealth;
+        if(statEnum.HasFlag(StatType.MaxHealthMultiplier)) playerStats.maxHealthMultiplier += stats.maxHealthMultiplier;
+        if(statEnum.HasFlag(StatType.Defense)) playerStats.defense += stats.defense;
+        if(statEnum.HasFlag(StatType.DefenseMultiplier)) playerStats.defenseMultiplier += stats.defenseMultiplier;
+        if(statEnum.HasFlag(StatType.DmgResistance)) playerStats.dmgResistance += stats.dmgResistance;
+        if(statEnum.HasFlag(StatType.DmgResistanceMultiplier)) playerStats.dmgResistanceMultiplier += stats.dmgResistanceMultiplier;
+
+        if(statEnum.HasFlag(StatType.HealRate)) playerStats.healRate += stats.healRate;
+        if(statEnum.HasFlag(StatType.HealAmount)) playerStats.healAmount += stats.healAmount;
+        if(statEnum.HasFlag(StatType.InvincibleTime)) playerStats.invincibleTime += stats.invincibleTime;
+    }
+    public void SetStats(PlayerStatistic stats,StatType statEnum)
+    {
+        if(statEnum.HasFlag(StatType.ExpMultiplier)) playerStats.expMultiplier = stats.expMultiplier;
+        if(statEnum.HasFlag(StatType.MoneyMultiplier)) playerStats.moneyMultiplier = stats.moneyMultiplier;
+        if(statEnum.HasFlag(StatType.EnemyDropFollowRange))playerStats.enemyDropFollowRange = stats.enemyDropFollowRange;
+
+        if(statEnum.HasFlag(StatType.MoveSpeed)) playerStats.moveSpeed = stats.moveSpeed;
+        if(statEnum.HasFlag(StatType.GravityForce)) playerStats.gravityForce = stats.gravityForce;
+        if(statEnum.HasFlag(StatType.JumpForce)) playerStats.jumpForce = stats.jumpForce;
+        
+        if(statEnum.HasFlag(StatType.FireRate)) playerStats.fireRate = stats.fireRate;
+        if(statEnum.HasFlag(StatType.FireRateMultiplier)) playerStats.fireRateMultiplier = stats.fireRateMultiplier;
+        if(statEnum.HasFlag(StatType.NumberOfProjectile)) playerStats.numberOfProjectile = stats.numberOfProjectile;
+        if(statEnum.HasFlag(StatType.Piercing)) playerStats.projectileSpeed = stats.projectileSpeed;
+        if(statEnum.HasFlag(StatType.Piercing)) playerStats.isPiercing = stats.isPiercing;
+
+        if(statEnum.HasFlag(StatType.CritRate)) playerStats.critRate = stats.critRate;
+        if(statEnum.HasFlag(StatType.CritDamage)) playerStats.critDamage = stats.critDamage;
+        if(statEnum.HasFlag(StatType.Damage)) playerStats.damage = stats.damage;
+        if(statEnum.HasFlag(StatType.DamageMultiplier)) playerStats.damageMultiplier = stats.damageMultiplier;
+
+        if(statEnum.HasFlag(StatType.MaxHealth)) playerStats.maxHealth = stats.maxHealth;
+        if(statEnum.HasFlag(StatType.MaxHealthMultiplier)) playerStats.maxHealthMultiplier = stats.maxHealthMultiplier;
+        if(statEnum.HasFlag(StatType.Defense)) playerStats.defense = stats.defense;
+        if(statEnum.HasFlag(StatType.DefenseMultiplier)) playerStats.defenseMultiplier = stats.defenseMultiplier;
+        if(statEnum.HasFlag(StatType.DmgResistance)) playerStats.dmgResistance = stats.dmgResistance;
+        if(statEnum.HasFlag(StatType.DmgResistanceMultiplier)) playerStats.dmgResistanceMultiplier = stats.dmgResistanceMultiplier;
+
+        if(statEnum.HasFlag(StatType.HealRate)) playerStats.healRate = stats.healRate;
+        if(statEnum.HasFlag(StatType.HealAmount)) playerStats.healAmount = stats.healAmount;
+        if(statEnum.HasFlag(StatType.InvincibleTime)) playerStats.invincibleTime = stats.invincibleTime;
+    }
 }
+
 [Flags]
 public enum StatType
 {
@@ -82,5 +151,4 @@ public enum StatType
     HealRate= 1 << 21,
     HealAmount= 1 << 22,
     InvincibleTime= 1 << 23,
-    
 }

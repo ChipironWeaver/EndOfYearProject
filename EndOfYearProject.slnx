@@ -1,7 +1,15 @@
 ﻿<Solution>
   <Project Path="NaughtyAttributes.Test.csproj" />
+  <Project Path="Utkaka.ScaleNineSlicer.SpriteSlicing.csproj" />
   <Project Path="NaughtyAttributes.Core.csproj" />
+  <Project Path="Utkaka.ScaleNineSlicer.Tests.Runtime.csproj" />
   <Project Path="NaughtyAttributes.Editor.csproj" />
+  <Project Path="Utkaka.ScaleNineSlicer.UI.csproj" />
+  <Project Path="Utkaka.ScaleNineSlicer.Editor.UI.csproj" />
   <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="Assembly-CSharp-firstpass.csproj" />
+  <Project Path="Utkaka.ScaleNineSlicer.Tests.Editor.csproj" />
   <Project Path="Assembly-CSharp-Editor.csproj" />
+  <Project Path="Utkaka.ScaleNineSlicer.Editor.SpriteSlicing.Window.csproj" />
+  <Project Path="Utkaka.ScaleNineSlicer.Editor.SpriteSlicing.csproj" />
 </Solution>
