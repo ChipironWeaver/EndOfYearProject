@@ -19,7 +19,7 @@ public class HealthController : MonoBehaviour
     public float invincibilityTime;
 
     [BoxGroup("Auto Heal")] 
-    public float healRate;
+    public float healRate = -1;
     [BoxGroup("Auto Heal")]
     public float healAmount;
 
@@ -36,11 +36,14 @@ public class HealthController : MonoBehaviour
     
     void Update()
     {
-        _currentCooldown += Time.deltaTime;
-        if (_currentCooldown >= 1/healRate)
+        if(healRate > 0)
         {
-            Heal(healAmount);
-            _currentCooldown = 0;
+            _currentCooldown += Time.deltaTime;
+            if (_currentCooldown >= 1/healRate)
+            {
+                Heal(healAmount);
+                _currentCooldown = 0;
+            }
         }
     }
 

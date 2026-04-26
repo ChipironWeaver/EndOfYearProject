@@ -2942,9 +2942,11 @@ MonoBehaviour:
     defenseMultiplier: 1
     dmgResistance: 0
     dmgResistanceMultiplier: 1
-    healRate: 0
+    healRate: -1
     healAmount: 0
-    invincibleTime: 0
+    invincibleTime: 0.5
+    itemPerLevel: 0
+    itemChoicePerLevel: 0
   playerStats:
     expMultiplier: 0
     moneyMultiplier: 0
@@ -2970,6 +2972,8 @@ MonoBehaviour:
     healRate: 0
     healAmount: 0
     invincibleTime: 0
+    itemPerLevel: 0
+    itemChoicePerLevel: 0
 --- !u!114 &1110371994
 MonoBehaviour:
   m_ObjectHideFlags: 0

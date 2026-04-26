@@ -62,6 +62,10 @@ public class Item : ScriptableObject
     public float healAmount;
     [ShowIf("statBoosts",StatType.InvincibleTime),BoxGroup("Over Time Heal")]
     public float invincibleTime;
+    [ShowIf("statBoosts",StatType.ItemPerLevel),BoxGroup("Item Optaining")]
+    public float itemPerLevel;
+    [ShowIf("statBoosts",StatType.ItemChoicePerLevel),BoxGroup("Item Optaining")]
+    public float itemChoicePerLevel;
 
     public PlayerStatistic GetPlayerStats()
     {
@@ -96,6 +100,9 @@ public class Item : ScriptableObject
         if(statBoosts.HasFlag(StatType.HealRate)) playerStats.healRate = healRate;
         if(statBoosts.HasFlag(StatType.HealAmount)) playerStats.healAmount = healAmount;
         if(statBoosts.HasFlag(StatType.InvincibleTime)) playerStats.invincibleTime = invincibleTime;
+
+        if(statBoosts.HasFlag(StatType.ItemPerLevel)) playerStats.itemPerLevel = itemPerLevel;
+        if(statBoosts.HasFlag(StatType.ItemChoicePerLevel)) playerStats.itemChoicePerLevel = itemChoicePerLevel;
 
         return playerStats;
     }

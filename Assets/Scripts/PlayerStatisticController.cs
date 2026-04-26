@@ -63,13 +63,13 @@ public class PlayerStatisticController : MonoBehaviour
         if(statEnum.HasFlag(StatType.MoneyMultiplier)) playerStats.moneyMultiplier += stats.moneyMultiplier;
         if(statEnum.HasFlag(StatType.EnemyDropFollowRange))playerStats.enemyDropFollowRange += stats.enemyDropFollowRange;
 
-        if(statEnum.HasFlag(StatType.MoveSpeed)) playerStats.moveSpeed += stats.moveSpeed;
-        if(statEnum.HasFlag(StatType.GravityForce)) playerStats.gravityForce += stats.gravityForce;
-        if(statEnum.HasFlag(StatType.JumpForce)) playerStats.jumpForce += stats.jumpForce;
+        if(statEnum.HasFlag(StatType.MoveSpeed)) playerStats.moveSpeed = Mathf.Clamp(playerStats.moveSpeed + stats.moveSpeed,2.5f,10);
+        if(statEnum.HasFlag(StatType.GravityForce)) playerStats.gravityForce = Mathf.Clamp(playerStats.gravityForce + stats.gravityForce,-27,-9);
+        if(statEnum.HasFlag(StatType.JumpForce)) playerStats.jumpForce = Mathf.Clamp(stats.jumpForce + playerStats.jumpForce,1,6);
         
-        if(statEnum.HasFlag(StatType.FireRate)) playerStats.fireRate += stats.fireRate;
-        if(statEnum.HasFlag(StatType.FireRateMultiplier)) playerStats.fireRateMultiplier += stats.fireRateMultiplier;
-        if(statEnum.HasFlag(StatType.NumberOfProjectile)) playerStats.numberOfProjectile += stats.numberOfProjectile;
+        if(statEnum.HasFlag(StatType.FireRate)) playerStats.fireRate = Mathf.Clamp(stats.fireRate + playerStats.fireRate,0.5f,5);
+        if(statEnum.HasFlag(StatType.FireRateMultiplier)) playerStats.fireRateMultiplier = Mathf.Clamp(stats.fireRateMultiplier + playerStats.fireRateMultiplier,0.25f,5);
+        if(statEnum.HasFlag(StatType.NumberOfProjectile)) playerStats.numberOfProjectile = Mathf.Clamp(stats.numberOfProjectile + playerStats.numberOfProjectile,0.5f,5);
         if(statEnum.HasFlag(StatType.Piercing)) playerStats.projectileSpeed += stats.projectileSpeed;
         if(stats.isPiercing && statEnum.HasFlag(StatType.Piercing)) playerStats.isPiercing = true;
 
@@ -88,6 +88,9 @@ public class PlayerStatisticController : MonoBehaviour
         if(statEnum.HasFlag(StatType.HealRate)) playerStats.healRate += stats.healRate;
         if(statEnum.HasFlag(StatType.HealAmount)) playerStats.healAmount += stats.healAmount;
         if(statEnum.HasFlag(StatType.InvincibleTime)) playerStats.invincibleTime += stats.invincibleTime;
+
+        if(statEnum.HasFlag(StatType.ItemPerLevel)) playerStats.itemPerLevel += stats.itemPerLevel;
+        if(statEnum.HasFlag(StatType.ItemChoicePerLevel)) playerStats.itemChoicePerLevel += stats.itemChoicePerLevel;
     }
     public void SetStats(PlayerStatistic stats,StatType statEnum)
     {
@@ -120,6 +123,9 @@ public class PlayerStatisticController : MonoBehaviour
         if(statEnum.HasFlag(StatType.HealRate)) playerStats.healRate = stats.healRate;
         if(statEnum.HasFlag(StatType.HealAmount)) playerStats.healAmount = stats.healAmount;
         if(statEnum.HasFlag(StatType.InvincibleTime)) playerStats.invincibleTime = stats.invincibleTime;
+        
+        if(statEnum.HasFlag(StatType.ItemPerLevel)) playerStats.itemPerLevel = stats.itemPerLevel;
+        if(statEnum.HasFlag(StatType.ItemChoicePerLevel)) playerStats.itemChoicePerLevel = stats.itemChoicePerLevel;
     }
 }
 
@@ -151,4 +157,6 @@ public enum StatType
     HealRate= 1 << 21,
     HealAmount= 1 << 22,
     InvincibleTime= 1 << 23,
+    ItemPerLevel = 1 << 24,
+    ItemChoicePerLevel = 11 << 25,
 }

@@ -33,6 +33,9 @@ public class PlayerStatistic
     public float healRate;
     public float healAmount;
     public float invincibleTime;
+    [Header("Item Optaining")]
+    public float itemPerLevel;
+    public float itemChoicePerLevel;
 
     public PlayerStatistic GetInverted()
     {
@@ -66,6 +69,9 @@ public class PlayerStatistic
         returnStats.healRate = healRate* -1;
         returnStats.healAmount = healAmount* -1;
         returnStats.invincibleTime = invincibleTime* -1;
+
+        returnStats.itemPerLevel = itemPerLevel* -1;
+        returnStats.itemChoicePerLevel = itemChoicePerLevel* -1;
 
         return returnStats;
     }
