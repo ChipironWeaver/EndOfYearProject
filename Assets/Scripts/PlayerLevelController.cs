@@ -10,13 +10,6 @@ public class PlayerLevelController : MonoBehaviour
     public int currentLevel;
     public float expMultiplier;
 
-    
-    
-    public delegate void OnPlayerExpGained();
-    public static event OnPlayerExpGained onPlayerExpGained;
-    public delegate void OnPlayerLeveling(bool isStart);
-    public static event OnPlayerLeveling onPlayerLeveling;
-
     public void Start()
     {
         /*for(int i = 1; i < 100; i++)
@@ -33,8 +26,9 @@ public class PlayerLevelController : MonoBehaviour
         while (currentExp >= expRequirementPetLevel.Evaluate(currentLevel + 1))
         {
             currentLevel++;
+            Actions.OnPlayerLevelUp?.Invoke();
         }
-        onPlayerExpGained?.Invoke();
+        Actions.OnPlayerEXPGained?.Invoke();
         //return currentLevel;
     }
 }

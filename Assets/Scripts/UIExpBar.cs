@@ -34,15 +34,15 @@ public class UIExpBar : MonoBehaviour
 
     private void OnEnable()
     {
-        PlayerLevelController.onPlayerExpGained += UpdateBar;
-        PlayerLevelController.onPlayerExpGained += Flash;
+        Actions.OnPlayerEXPGained+= UpdateBar;
+        Actions.OnPlayerEXPGained += Flash;
         
     }
 
     private void OnDisable()
     {
-        PlayerLevelController.onPlayerExpGained -= UpdateBar;
-        PlayerLevelController.onPlayerExpGained -= Flash;
+        Actions.OnPlayerEXPGained -= UpdateBar;
+        Actions.OnPlayerEXPGained -= Flash;
     }
     
     
