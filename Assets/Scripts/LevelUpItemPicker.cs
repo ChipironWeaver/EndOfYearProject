@@ -45,6 +45,7 @@ public class LevelUpItemPicker : MonoBehaviour
     [Button]
     private void FadeIn()
     {
+        Cursor.lockState = CursorLockMode.Confined;
         if(_numberOfItems <= 0) return;
         Time.timeScale = 0;
         _blurImage.enabled = true;
@@ -131,6 +132,7 @@ public class LevelUpItemPicker : MonoBehaviour
         {
             Time.timeScale = 1;
             _blurImage.enabled = false;
+            Cursor.lockState = CursorLockMode.Locked;
         });
 
     }
