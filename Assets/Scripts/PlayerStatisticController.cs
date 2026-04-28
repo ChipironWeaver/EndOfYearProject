@@ -91,6 +91,8 @@ public class PlayerStatisticController : MonoBehaviour
 
         if(statEnum.HasFlag(StatType.ItemPerLevel)) playerStats.itemPerLevel += stats.itemPerLevel;
         if(statEnum.HasFlag(StatType.ItemChoicePerLevel)) playerStats.itemChoicePerLevel += stats.itemChoicePerLevel;
+
+        ApplyStatsOnComponent();
     }
     public void SetStats(PlayerStatistic stats,StatType statEnum)
     {
@@ -126,6 +128,8 @@ public class PlayerStatisticController : MonoBehaviour
         
         if(statEnum.HasFlag(StatType.ItemPerLevel)) playerStats.itemPerLevel = stats.itemPerLevel;
         if(statEnum.HasFlag(StatType.ItemChoicePerLevel)) playerStats.itemChoicePerLevel = stats.itemChoicePerLevel;
+
+        ApplyStatsOnComponent();
     }
 }
 

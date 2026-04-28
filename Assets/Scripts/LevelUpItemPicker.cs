@@ -67,7 +67,6 @@ public class LevelUpItemPicker : MonoBehaviour
                 itemPanel.GetComponent<Button>().interactable = false;
             }
             
-            
             HideItem(0);
             return;
         }

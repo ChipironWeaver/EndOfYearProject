@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f42dca39518fb564abb5672a046b5b57, type: 3}
   m_Name: SadOnion
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemName: SadOnion
+  itemName: Sad Onion
   description: +0.6 Fire Rate
   sprite: {fileID: 21300000, guid: 1198e3d3eaefb3e42a99c05e5ea05003, type: 3}
   rarity: 0
