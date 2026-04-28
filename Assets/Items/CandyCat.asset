@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f42dca39518fb564abb5672a046b5b57, type: 3}
+  m_Name: CandyCat
+  m_EditorClassIdentifier: Assembly-CSharp::Item
+  itemName: CandyCat
+  description: 'Yummy but unhealthy :c
+
+    +75% Crit Damage
+
+    +5 Damage
+
+    +50%
+    Damage
+
+    -10 Max Health
+
+    -50% Health'
+  sprite: {fileID: 0}
+  rarity: 3
+  statBoosts: 126976
+  setStats: 0
+  expMultiplier: 0
+  moneyMultiplier: 0
+  enemyDropFollowRange: 0
+  moveSpeed: 0
+  gravityForce: 0
+  jumpForce: 0
+  fireRate: 0
+  fireRateMultiplier: 0
+  numberOfProjectile: 0
+  projectileSpeed: 0
+  isPiercing: 0
+  critRate: 0
+  critDamage: 75
+  damage: 5
+  damageMultiplier: 0.5
+  maxHealth: -10
+  maxHealthMultiplier: -0.25
+  defense: 0
+  defenseMultiplier: 0
+  dmgResistance: 0
+  dmgResistanceMultiplier: 0
+  healRate: 0
+  healAmount: 0
+  invincibleTime: 0
+  itemPerLevel: 0
+  itemChoicePerLevel: 0

@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerDamageDealer
   isTrueDamage: 0
-  damage: 5
+  damage: 20
   playerTag: Player
 --- !u!114 &8889785422272500968
 MonoBehaviour:

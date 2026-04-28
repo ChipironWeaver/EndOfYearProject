@@ -6,10 +6,10 @@ using UnityEngine.UI;
 
 public class LevelUpItemPicker : MonoBehaviour
 {
-    [SerializeField] private Item _itemTest;
     [Header("References")]
     [SerializeField] private GameObject _itemPanelPrefab;
     [SerializeField] private GameObject _blurPanel;
+    [SerializeField] private UIExpBar _bar;
     [Header("Blue Fade")]
     [SerializeField] private int _blurAmount;
     [SerializeField] private float _blurDuration;
@@ -20,33 +20,44 @@ public class LevelUpItemPicker : MonoBehaviour
     [SerializeField] private Vector3 _baseItemPanelScale;
     [SerializeField] private float _itemPanelFadeDuration;
     [SerializeField] private Ease _itemPanelEase;
-    [Header("Values")]
-    [SerializeField] private int _numberOfItems = 2;
-    [SerializeField] private float _numberOfItemChoice = 4;
-    [SerializeField] private List<GameObject> _itemsPanels = new List<GameObject>();
+    private List<GameObject> _itemsPanels = new List<GameObject>();
 
+    private int _numberOfItems;
     private Image _blurImage;
     private Image _image;
 
-
-    [Button]
-    private void Reset()
+    private void OnEnable()
     {
-        Time.timeScale = 1;
+        Actions.OnPlayerLevelUp += PanelLogic;
+    }
+    private void OnDisable()
+    {
+        Actions.OnPlayerLevelUp -= PanelLogic;
     }
     private void Start()
     {
         _blurImage = _blurPanel.GetComponent<Image>();
-        //_blurMaterial.SetInteger("_Blur",5);
         _blurImage.enabled = false;
         _image = GetComponent<Image>();
     }
-    
-    [Button]
+
+    public void PanelLogic()
+    {
+        int nextItems = RandomRound(PlayerInstance.playerStatisticController.playerStats.itemPerLevel);
+        if(nextItems > 0 && _numberOfItems == 0)
+        {
+            _numberOfItems += nextItems;
+            FadeIn();
+        }
+        else _numberOfItems += nextItems;
+    }
+
+
     private void FadeIn()
     {
-        Cursor.lockState = CursorLockMode.Confined;
         if(_numberOfItems <= 0) return;
+        _bar.LevelUp(true);
+        Cursor.lockState = CursorLockMode.Confined;
         Time.timeScale = 0;
         _blurImage.enabled = true;
         _blurImage.material.SetInteger("_Blur", 0);
@@ -59,7 +70,6 @@ public class LevelUpItemPicker : MonoBehaviour
 
     private void StartThePanel()
     {
-        print("starting the panel");
         if (_itemsPanels.Count > 0)
         {
             foreach (GameObject itemPanel in _itemsPanels)
@@ -77,22 +87,20 @@ public class LevelUpItemPicker : MonoBehaviour
         }
         _numberOfItems--;
         
-        int numberOfItems = RandomRound(_numberOfItemChoice);
-        print(numberOfItems);
+        int numberOfItems = RandomRound(PlayerInstance.playerStatisticController.playerStats.itemChoicePerLevel);
         for (int i = 0; i < numberOfItems; i++)
         {
             GameObject item = Instantiate(_itemPanelPrefab,transform);
             _itemsPanels.Add(item);
             item.transform.localScale = _baseItemPanelScale;
             item.GetComponent<Button>().onClick.AddListener(StartThePanel);
-            item.GetComponent<ItemRenderer>().UpdateItemRender(_itemTest);
+            item.GetComponent<ItemRenderer>().UpdateItemRender(LootPoolController.Instance.GetRandomItem());
         }
         DisplayPanel(0);
     }
 
     private void HideItem(int index)
     {
-        print("hiding the item");
         if (index >= _itemsPanels.Count)
         {
             foreach(GameObject itemPanel in _itemsPanels) Destroy(itemPanel);
@@ -124,6 +132,7 @@ public class LevelUpItemPicker : MonoBehaviour
     private void FadeOut()
     {
         Sequence fadeInSequence = DOTween.Sequence();
+        
         fadeInSequence.Append(DOTween.To(()=> _blurImage.material.GetInteger("_Blur"), x=>_blurImage.material.SetInteger("_Blur",x), 0, _blurDuration));
         fadeInSequence.Join(_image.DOColor(Color.clear, _panelTime));
         fadeInSequence.SetUpdate(true);
@@ -132,6 +141,7 @@ public class LevelUpItemPicker : MonoBehaviour
             Time.timeScale = 1;
             _blurImage.enabled = false;
             Cursor.lockState = CursorLockMode.Locked;
+            _bar.LevelUp(false);
         });
 
     }

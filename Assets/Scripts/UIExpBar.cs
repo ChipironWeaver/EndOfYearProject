@@ -28,13 +28,11 @@ public class UIExpBar : MonoBehaviour
     [SerializeField] private Ease _flashEaseType;
     
     private SlicedImage _image;
-    
-    private Sequence _baseColorSequence;
-    private Sequence _levelUpSequence;
+    private bool _inLevelUp;
 
     private void OnEnable()
     {
-        Actions.OnPlayerEXPGained+= UpdateBar;
+        Actions.OnPlayerEXPGained += UpdateBar;
         Actions.OnPlayerEXPGained += Flash;
         
     }
@@ -49,57 +47,77 @@ public class UIExpBar : MonoBehaviour
     private void Start()
     {
         _image = GetComponent<SlicedImage>();
-        _baseColorSequence = DOTween.Sequence();
-        foreach (Color color in _baseColors)
-        {
-            _baseColorSequence.Append(_image.DOColor(color, _colorDuration)).SetEase(_baseEaseType);
-        }
-        _baseColorSequence.SetLoops(-1);
-        
-        _levelUpSequence = DOTween.Sequence();
-        
-        foreach (Color color in _levelUpColors)
-        {
-            _levelUpSequence.Append(_image.DOColor(color, _levelUpColorDuration)).SetEase(_levelUpEaseType);
-        }
-        _levelUpSequence.SetLoops(-1);
-        _levelUpSequence.Pause();
-        _image.color = _baseColors[^1];
-        _image.fillAmount = 0;
+        SetSequence(false);
     }
     
     private void Flash()
     {
-        _baseColorSequence.Pause();
         Sequence flashSequence = DOTween.Sequence();
         flashSequence.Append(_image.DOColor(_flashColor, _flashDuration)).SetEase(_flashEaseType);
         flashSequence.Append(_image.DOColor(_image.color, _flashDuration)).SetEase(_flashEaseType);
-        _baseColorSequence.Play();
     }
     
-    private void LevelUp(bool isStart)
+    public void LevelUp(bool isStart)
     {
         if(isStart)
         {
+            SetSequence(false);
             _image.fillAmount = 1;
-            _baseColorSequence.Pause();
-            _levelUpSequence.Restart();
+            _inLevelUp = true;
         }
         else
         {
-            _levelUpSequence.Pause();
+            SetSequence(true);
             UpdateBar();
-            _baseColorSequence.Restart();
+            _inLevelUp = true;
         }
     }
 
     [Button]
     private void UpdateBar()
     {
+        if(_inLevelUp) return;
         AnimationCurve levelCurve = PlayerInstance.playerLevelController.expRequirementPetLevel;
         int currentLevel = PlayerInstance.playerLevelController.currentLevel;
         float currentExp =  PlayerInstance.playerLevelController.currentExp;
-        float fillAmount = (currentExp - levelCurve.Evaluate(currentLevel)) / (levelCurve.Evaluate(currentLevel + 1) - levelCurve.Evaluate(currentLevel));
+        float fillAmount;
+        if(currentLevel == 0)
+        {
+            fillAmount = currentExp  / levelCurve.Evaluate(currentLevel + 1);
+        }
+        else
+        {
+            fillAmount = (currentExp - levelCurve.Evaluate(currentLevel)) / (levelCurve.Evaluate(currentLevel + 1) - levelCurve.Evaluate(currentLevel));
+        }
         _image.fillAmount = fillAmount;
+    }
+
+    private void SetSequence(bool isLevelUp)
+    {
+        DOTween.Clear();
+        if (!isLevelUp)
+        {
+            Sequence _baseColorSequence = DOTween.Sequence();
+            _image.color = _baseColors[0];
+
+            for(int i = 1; i < _baseColors.Count; i++)
+            {
+                _baseColorSequence.Append(_image.DOColor(_baseColors[i], _colorDuration)).SetEase(_baseEaseType);
+            }
+            _baseColorSequence.SetLoops(-1);
+        }
+        else
+        {
+            Sequence _levelUpSequence = DOTween.Sequence();
+            _image.color = _levelUpColors[0];
+            for(int i = 1; i < _levelUpColors.Count; i++)
+            {
+                _levelUpSequence.Append(_image.DOColor(_levelUpColors[i], _levelUpColorDuration)).SetEase(_levelUpEaseType);
+            }
+            _levelUpSequence.SetLoops(-1);
+            _levelUpSequence.SetUpdate(true);
+            _levelUpSequence.Pause();
+        }
+    
     }
 }

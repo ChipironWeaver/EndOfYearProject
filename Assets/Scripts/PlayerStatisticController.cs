@@ -78,7 +78,7 @@ public class PlayerStatisticController : MonoBehaviour
         if(statEnum.HasFlag(StatType.Damage)) playerStats.damage += stats.damage;
         if(statEnum.HasFlag(StatType.DamageMultiplier)) playerStats.damageMultiplier += stats.damageMultiplier;
 
-        if(statEnum.HasFlag(StatType.MaxHealth)) playerStats.maxHealth += stats.maxHealth;
+        if(statEnum.HasFlag(StatType.MaxHealth)) playerStats.maxHealth = Mathf.Clamp(playerStats.maxHealth + stats.maxHealth,1f,1000f);
         if(statEnum.HasFlag(StatType.MaxHealthMultiplier)) playerStats.maxHealthMultiplier += stats.maxHealthMultiplier;
         if(statEnum.HasFlag(StatType.Defense)) playerStats.defense += stats.defense;
         if(statEnum.HasFlag(StatType.DefenseMultiplier)) playerStats.defenseMultiplier += stats.defenseMultiplier;
@@ -89,8 +89,8 @@ public class PlayerStatisticController : MonoBehaviour
         if(statEnum.HasFlag(StatType.HealAmount)) playerStats.healAmount += stats.healAmount;
         if(statEnum.HasFlag(StatType.InvincibleTime)) playerStats.invincibleTime += stats.invincibleTime;
 
-        if(statEnum.HasFlag(StatType.ItemPerLevel)) playerStats.itemPerLevel += stats.itemPerLevel;
-        if(statEnum.HasFlag(StatType.ItemChoicePerLevel)) playerStats.itemChoicePerLevel += stats.itemChoicePerLevel;
+        if(statEnum.HasFlag(StatType.ItemPerLevel)) playerStats.itemPerLevel =  Mathf.Clamp(playerStats.itemPerLevel + stats.itemPerLevel,0,6);
+        if(statEnum.HasFlag(StatType.ItemChoicePerLevel)) playerStats.itemChoicePerLevel = Mathf.Clamp(stats.itemChoicePerLevel + playerStats.itemChoicePerLevel,1,5);
 
         ApplyStatsOnComponent();
     }

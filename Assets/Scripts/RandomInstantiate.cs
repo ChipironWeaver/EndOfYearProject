@@ -32,7 +32,8 @@ public class RandomInstantiate : MonoBehaviour
                     break;
                 }
             }
-            Instantiate(toInstantiate);
+            GameObject instantiated = Instantiate(toInstantiate);
+            instantiated.transform.position = transform.position + new Vector3(0,0,0.5f);
         }
     }
     

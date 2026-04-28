@@ -23,12 +23,25 @@ public class PlayerLevelController : MonoBehaviour
     public void ChangeExp(float exp)
     {
         currentExp += exp * expMultiplier;
-        while (currentExp >= expRequirementPetLevel.Evaluate(currentLevel + 1))
+        if(currentLevel >= 100)
         {
-            currentLevel++;
-            Actions.OnPlayerLevelUp?.Invoke();
+            while (currentExp >= expRequirementPetLevel.Evaluate(100))
+            {
+                currentLevel++;
+                currentExp -= expRequirementPetLevel.Evaluate(100) - expRequirementPetLevel.Evaluate(99);
+                Actions.OnPlayerLevelUp?.Invoke();
+                return;
+            }
+        }
+        else
+        {
+            while (currentExp >= expRequirementPetLevel.Evaluate(currentLevel + 1))
+            {
+                currentLevel++;
+                Actions.OnPlayerLevelUp?.Invoke();
+                return;
+            }
         }
         Actions.OnPlayerEXPGained?.Invoke();
-        //return currentLevel;
     }
 }

@@ -8,6 +8,7 @@ public class ItemRenderer : MonoBehaviour
 {
     [SerializeField] private Image _image;
     [SerializeField] private Image _background;
+    [SerializeField] private Button _button;
     [SerializeField] private List<BackgroundPerRarity> _backgroundPerRarity;
     [SerializeField] private TextMeshProUGUI _name;
     [SerializeField] private TextMeshProUGUI  _description;
@@ -24,6 +25,10 @@ public class ItemRenderer : MonoBehaviour
                 _background.sprite = perRarity.Background;
                 break;
             }
+        }
+        if(_button != null)
+        {
+            _button.onClick.AddListener(() => PlayerInstance.playerInventory.AddItem(item));
         }
     }
 }
