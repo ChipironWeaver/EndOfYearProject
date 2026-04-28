@@ -8,6 +8,7 @@ public class PlayerInstance : MonoBehaviour
     public static PlayerStatisticController playerStatisticController;
     public static PlayerMovementController playerMovementController;
     public static PlayerLevelController playerLevelController;
+    public static PlayerInventory playerInventory;
 
     void Awake()
     {
@@ -21,6 +22,7 @@ public class PlayerInstance : MonoBehaviour
         playerStatisticController = GetComponent<PlayerStatisticController>();
         playerMovementController = GetComponent<PlayerMovementController>();
         playerLevelController = GetComponent<PlayerLevelController>();
+        playerInventory = GetComponent<PlayerInventory>();
     }
     void Singleton()
     {

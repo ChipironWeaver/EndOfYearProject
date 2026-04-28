@@ -274,8 +274,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   _image: {fileID: 8268786252491226313}
+  _background: {fileID: 4587844541304422499}
+  _backgroundPerRarity:
+  - Background: {fileID: -1879836466, guid: 116e5b093f229834d9f30a606e77b907, type: 3}
+    ItemRarity: 0
+  - Background: {fileID: 798345425, guid: 116e5b093f229834d9f30a606e77b907, type: 3}
+    ItemRarity: 1
+  - Background: {fileID: 1618434853, guid: 116e5b093f229834d9f30a606e77b907, type: 3}
+    ItemRarity: 2
+  - Background: {fileID: 882108405, guid: 116e5b093f229834d9f30a606e77b907, type: 3}
+    ItemRarity: 3
   _name: {fileID: 4391142634316254696}
   _description: {fileID: 1143254522969912199}
+  _button: {fileID: 7994554402556829318}
 --- !u!1 &6474452795843036452
 GameObject:
   m_ObjectHideFlags: 0

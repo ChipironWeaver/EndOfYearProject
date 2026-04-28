@@ -20,13 +20,20 @@ public class LevelUpItemPicker : MonoBehaviour
     [SerializeField] private Vector3 _baseItemPanelScale;
     [SerializeField] private float _itemPanelFadeDuration;
     [SerializeField] private Ease _itemPanelEase;
-    [Header("Read Only")]
-    [ReadOnly] private int _numberOfItems = 2;
-    [ReadOnly] private float _numberOfItemChoice = 4;
-    [ReadOnly] private List<GameObject> _itemsPanels = new List<GameObject>();
+    [Header("Values")]
+    [SerializeField] private int _numberOfItems = 2;
+    [SerializeField] private float _numberOfItemChoice = 4;
+    [SerializeField] private List<GameObject> _itemsPanels = new List<GameObject>();
 
     private Image _blurImage;
     private Image _image;
+
+
+    [Button]
+    private void Reset()
+    {
+        Time.timeScale = 1;
+    }
     private void Start()
     {
         _blurImage = _blurPanel.GetComponent<Image>();
@@ -54,6 +61,12 @@ public class LevelUpItemPicker : MonoBehaviour
         print("starting the panel");
         if (_itemsPanels.Count > 0)
         {
+            foreach (GameObject itemPanel in _itemsPanels)
+            {
+                itemPanel.GetComponent<Button>().interactable = false;
+            }
+            
+            
             HideItem(0);
             return;
         }

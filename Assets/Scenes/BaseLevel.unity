@@ -1264,7 +1264,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 447075998}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -3118,7 +3118,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4703f66562dbc5f4b90c920065bd8dca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  _testItem: {fileID: 11400000, guid: fa2fb6365ffe7de418f5ec107da5f2db, type: 2}
 --- !u!1 &1145551267
 GameObject:
   m_ObjectHideFlags: 0
@@ -5578,7 +5577,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1951223420}
   - component: {fileID: 1951223422}
-  - component: {fileID: 1951223421}
+  - component: {fileID: 1951223425}
   - component: {fileID: 1951223423}
   - component: {fileID: 1951223424}
   m_Layer: 5
@@ -5607,36 +5606,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -600, y: -300}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1951223421
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1951223419}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.69200575, g: 1, b: 0.1745283, a: 0}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1951223422
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5687,12 +5656,45 @@ MonoBehaviour:
   _itemPanelPrefab: {fileID: 5214394512448359805, guid: 1272bb4e492ddc146a5bf6dbcfeef25c, type: 3}
   _blurPanel: {fileID: 447075998}
   _blurAmount: 15
-  _blurDuration: 1
-  _targetColor: {r: 0.82253915, g: 1, b: 0.504717, a: 0.7019608}
-  _panelTime: 0.85
+  _blurDuration: 0.75
+  _targetColor: {r: 1, g: 1, b: 1, a: 0}
+  _panelTime: 0.6
   _baseItemPanelScale: {x: 0, y: 0.75, z: 0}
-  _itemPanelFadeDuration: 0.35
+  _itemPanelFadeDuration: 0.15
   _itemPanelEase: 8
+  _numberOfItems: 5
+  _numberOfItemChoice: 3.5
+  _itemsPanels: []
+--- !u!114 &1951223425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1951223419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: e9c65be7e5ea64d4cb399b20c3140642, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &2017667889
 GameObject:
   m_ObjectHideFlags: 0

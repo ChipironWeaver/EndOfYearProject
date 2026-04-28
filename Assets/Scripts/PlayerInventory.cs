@@ -8,8 +8,6 @@ public class PlayerInventory : MonoBehaviour
 {
     public List<Item> heldItems{get; private set;} = new List<Item>();
 
-    [SerializeField] private Item _testItem;
-
     public void AddItem(Item item)
     {
         print(item.name);
@@ -32,16 +30,5 @@ public class PlayerInventory : MonoBehaviour
         {
             Debug.LogWarning("Tried removing an item that the player does not have : " + item.itemName);
         }
-    }
-    [Button]
-    private void TestAdd()
-    {
-        AddItem(_testItem);
-    }
-    [Button]
-    private void TestRemove()
-    {
-        print("test remove");
-        RemoveItem(_testItem);
     }
 }
