@@ -755,12 +755,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UISceneTransitionLoader
   _autoFadeIn: 1
-  _autoFadeColor: {r: 1, g: 0.5058824, b: 0.99215686, a: 1}
+  _autoFadeColor: {r: 0, g: 0, b: 0, a: 1}
   _fadeDuration: 1
   _sceneColorTransitions:
-  - color: {r: 1, g: 0.7655329, b: 0.5058824, a: 1}
+  - color: {r: 0, g: 0, b: 0, a: 1}
     sceneName: BaseLevel
-  - color: {r: 1, g: 0.5058824, b: 0.989443, a: 1}
+  - color: {r: 0, g: 0, b: 0, a: 1}
     sceneName: MainMenu
 --- !u!114 &914814103
 MonoBehaviour:

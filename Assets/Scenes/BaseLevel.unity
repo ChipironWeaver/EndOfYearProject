@@ -5921,13 +5921,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b0682dfd689231469a326373b9e5530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UISceneTransitionLoader
-  _autoFadeIn: 0
-  _autoFadeColor: {r: 1, g: 0.7647059, b: 0.5058824, a: 1}
+  _autoFadeIn: 1
+  _autoFadeColor: {r: 0, g: 0, b: 0, a: 1}
   _fadeDuration: 1
   _sceneColorTransitions:
-  - color: {r: 1, g: 0.5058824, b: 0.99215686, a: 1}
+  - color: {r: 0, g: 0, b: 0, a: 1}
     sceneName: MainMenu
-  - color: {r: 1, g: 0.7647059, b: 0.5058824, a: 1}
+  - color: {r: 0, g: 0, b: 0, a: 1}
     sceneName: BaseLevel
 --- !u!114 &2039429658
 MonoBehaviour:
