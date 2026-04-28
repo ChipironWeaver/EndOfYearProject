@@ -1237,7 +1237,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &447075999
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1295,141 +1295,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 447075998}
   m_CullTransparentMesh: 1
---- !u!1 &448464181
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 448464182}
-  - component: {fileID: 448464184}
-  - component: {fileID: 448464183}
-  - component: {fileID: 448464185}
-  m_Layer: 5
-  m_Name: Rafayel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &448464182
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 448464181}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1168082579}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -125, y: -125}
-  m_SizeDelta: {x: 200, y: 200}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &448464183
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 448464181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &448464184
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 448464181}
-  m_CullTransparentMesh: 1
---- !u!114 &448464185
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 448464181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a9e8f1c58129334eb52c804966f6315, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::UIAnimator
-  frames:
-  - {fileID: -279165986, guid: 1cbe0b4f8de2af6459c03e964697a48d, type: 3}
-  - {fileID: -979568786, guid: 1cbe0b4f8de2af6459c03e964697a48d, type: 3}
-  - {fileID: 1518446549, guid: 1cbe0b4f8de2af6459c03e964697a48d, type: 3}
-  - {fileID: -1155202532, guid: 1cbe0b4f8de2af6459c03e964697a48d, type: 3}
-  - {fileID: -1848001991, guid: 1cbe0b4f8de2af6459c03e964697a48d, type: 3}
-  - {fileID: -940666196, guid: 1cbe0b4f8de2af6459c03e964697a48d, type: 3}
-  - {fileID: 1232574896, guid: 1cbe0b4f8de2af6459c03e964697a48d, type: 3}
-  - {fileID: 257197642, guid: 1cbe0b4f8de2af6459c03e964697a48d, type: 3}
-  - {fileID: -611281376, guid: 1cbe0b4f8de2af6459c03e964697a48d, type: 3}
-  - {fileID: -937064790, guid: 1cbe0b4f8de2af6459c03e964697a48d, type: 3}
-  - {fileID: -1006583922, guid: 1cbe0b4f8de2af6459c03e964697a48d, type: 3}
-  - {fileID: 604367313, guid: 1cbe0b4f8de2af6459c03e964697a48d, type: 3}
-  - {fileID: 1818134984, guid: 1cbe0b4f8de2af6459c03e964697a48d, type: 3}
-  - {fileID: 751050818, guid: 1cbe0b4f8de2af6459c03e964697a48d, type: 3}
-  - {fileID: -1533599364, guid: 1cbe0b4f8de2af6459c03e964697a48d, type: 3}
-  - {fileID: 1742989952, guid: 1cbe0b4f8de2af6459c03e964697a48d, type: 3}
-  - {fileID: -1650373092, guid: 1cbe0b4f8de2af6459c03e964697a48d, type: 3}
-  - {fileID: 541680581, guid: 1cbe0b4f8de2af6459c03e964697a48d, type: 3}
-  - {fileID: -738936832, guid: 1cbe0b4f8de2af6459c03e964697a48d, type: 3}
-  - {fileID: 1381962560, guid: 1cbe0b4f8de2af6459c03e964697a48d, type: 3}
-  - {fileID: -1766548462, guid: 1cbe0b4f8de2af6459c03e964697a48d, type: 3}
-  - {fileID: 182510558, guid: 1cbe0b4f8de2af6459c03e964697a48d, type: 3}
-  - {fileID: 1940639809, guid: 1cbe0b4f8de2af6459c03e964697a48d, type: 3}
-  - {fileID: -2033955078, guid: 1cbe0b4f8de2af6459c03e964697a48d, type: 3}
-  - {fileID: -2050196086, guid: 1cbe0b4f8de2af6459c03e964697a48d, type: 3}
-  - {fileID: 96487510, guid: 1cbe0b4f8de2af6459c03e964697a48d, type: 3}
-  - {fileID: -192300520, guid: 1cbe0b4f8de2af6459c03e964697a48d, type: 3}
-  - {fileID: 1820556103, guid: 1cbe0b4f8de2af6459c03e964697a48d, type: 3}
-  - {fileID: -940781448, guid: 1cbe0b4f8de2af6459c03e964697a48d, type: 3}
-  - {fileID: -273809511, guid: 1cbe0b4f8de2af6459c03e964697a48d, type: 3}
-  - {fileID: -329336374, guid: 1cbe0b4f8de2af6459c03e964697a48d, type: 3}
-  - {fileID: -2134032889, guid: 1cbe0b4f8de2af6459c03e964697a48d, type: 3}
-  - {fileID: 1902125396, guid: 1cbe0b4f8de2af6459c03e964697a48d, type: 3}
-  - {fileID: -888205594, guid: 1cbe0b4f8de2af6459c03e964697a48d, type: 3}
-  - {fileID: -28346132, guid: 1cbe0b4f8de2af6459c03e964697a48d, type: 3}
-  - {fileID: -802063066, guid: 1cbe0b4f8de2af6459c03e964697a48d, type: 3}
-  - {fileID: 1355240849, guid: 1cbe0b4f8de2af6459c03e964697a48d, type: 3}
-  - {fileID: -1614971512, guid: 1cbe0b4f8de2af6459c03e964697a48d, type: 3}
-  - {fileID: -840002857, guid: 1cbe0b4f8de2af6459c03e964697a48d, type: 3}
-  - {fileID: -523381417, guid: 1cbe0b4f8de2af6459c03e964697a48d, type: 3}
-  - {fileID: 714366109, guid: 1cbe0b4f8de2af6459c03e964697a48d, type: 3}
-  - {fileID: -86225963, guid: 1cbe0b4f8de2af6459c03e964697a48d, type: 3}
-  - {fileID: -1472577705, guid: 1cbe0b4f8de2af6459c03e964697a48d, type: 3}
-  - {fileID: -1317460066, guid: 1cbe0b4f8de2af6459c03e964697a48d, type: 3}
-  - {fileID: -1922891688, guid: 1cbe0b4f8de2af6459c03e964697a48d, type: 3}
-  frameDuration: 0.1
 --- !u!1 &461074648
 GameObject:
   m_ObjectHideFlags: 0
@@ -3386,7 +3251,6 @@ RectTransform:
   - {fileID: 132621602}
   - {fileID: 1310596109}
   - {fileID: 2039429656}
-  - {fileID: 448464182}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -5723,7 +5587,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1951223420
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5756,8 +5620,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.69200575, g: 1, b: 0.1745283, a: 0.392}
-  m_RaycastTarget: 1
+  m_Color: {r: 0.69200575, g: 1, b: 0.1745283, a: 0}
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -5804,8 +5668,8 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 1
   m_ChildControlHeight: 1
-  m_ChildScaleWidth: 1
-  m_ChildScaleHeight: 1
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
 --- !u!114 &1951223424
 MonoBehaviour:
@@ -5819,7 +5683,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dbdaa53756889a4baf9ea9ff225bda5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  itemPanelPrefab: {fileID: 0}
+  _itemTest: {fileID: 11400000, guid: fa2fb6365ffe7de418f5ec107da5f2db, type: 2}
+  _itemPanelPrefab: {fileID: 5214394512448359805, guid: 1272bb4e492ddc146a5bf6dbcfeef25c, type: 3}
+  _blurPanel: {fileID: 447075998}
+  _blurAmount: 15
+  _blurDuration: 1
+  _targetColor: {r: 0.82253915, g: 1, b: 0.504717, a: 0.7019608}
+  _panelTime: 0.85
+  _baseItemPanelScale: {x: 0, y: 0.75, z: 0}
+  _itemPanelFadeDuration: 0.35
+  _itemPanelEase: 8
 --- !u!1 &2017667889
 GameObject:
   m_ObjectHideFlags: 0
@@ -6046,7 +5919,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b0682dfd689231469a326373b9e5530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UISceneTransitionLoader
-  _autoFadeIn: 1
+  _autoFadeIn: 0
   _autoFadeColor: {r: 1, g: 0.7647059, b: 0.5058824, a: 1}
   _fadeDuration: 1
   _sceneColorTransitions:
