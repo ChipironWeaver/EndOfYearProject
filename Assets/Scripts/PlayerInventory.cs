@@ -10,9 +10,7 @@ public class PlayerInventory : MonoBehaviour
 
     public void AddItem(Item item)
     {
-        print(item.name);
         heldItems.Add(item);
-        print(heldItems.Count());
         if(item.setStats) PlayerInstance.playerStatisticController.SetStats(item.GetPlayerStats(), item.statBoosts);
         else PlayerInstance.playerStatisticController.AddStats(item.GetPlayerStats(), item.statBoosts);
         

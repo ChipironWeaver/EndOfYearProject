@@ -16,7 +16,7 @@ public class ItemRenderer : MonoBehaviour
     public void UpdateItemRender(Item item)
     {
         _image.sprite = item.sprite;
-        _name.text = item.name;
+        _name.text = item.itemName;
         _description.text = item.description;
         foreach (var perRarity in _backgroundPerRarity)
         {

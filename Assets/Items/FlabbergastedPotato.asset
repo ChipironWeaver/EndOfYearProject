@@ -46,5 +46,5 @@ MonoBehaviour:
   healRate: 0
   healAmount: 0
   invincibleTime: 0
-  itemPerLevel: 0.5
-  itemChoicePerLevel: -0.5
+  itemPerLevel: 0.25
+  itemChoicePerLevel: -0.25

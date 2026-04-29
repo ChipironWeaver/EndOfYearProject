@@ -61,21 +61,22 @@ public class UIExpBar : MonoBehaviour
     {
         if(isStart)
         {
-            SetSequence(false);
+            SetSequence(true);
             _image.fillAmount = 1;
             _inLevelUp = true;
         }
         else
         {
-            SetSequence(true);
+            SetSequence(false);
             UpdateBar();
-            _inLevelUp = true;
+            _inLevelUp = false;
         }
     }
 
     [Button]
     private void UpdateBar()
     {
+        print(_inLevelUp);
         if(_inLevelUp) return;
         AnimationCurve levelCurve = PlayerInstance.playerLevelController.expRequirementPetLevel;
         int currentLevel = PlayerInstance.playerLevelController.currentLevel;
@@ -100,7 +101,7 @@ public class UIExpBar : MonoBehaviour
             Sequence _baseColorSequence = DOTween.Sequence();
             _image.color = _baseColors[0];
 
-            for(int i = 1; i < _baseColors.Count; i++)
+            for(int i = 0; i < _baseColors.Count; i++)
             {
                 _baseColorSequence.Append(_image.DOColor(_baseColors[i], _colorDuration)).SetEase(_baseEaseType);
             }
@@ -108,15 +109,16 @@ public class UIExpBar : MonoBehaviour
         }
         else
         {
-            Sequence _levelUpSequence = DOTween.Sequence();
             _image.color = _levelUpColors[0];
-            for(int i = 1; i < _levelUpColors.Count; i++)
+            Sequence _levelUpSequence = DOTween.Sequence();
+            for(int i = 0; i < _levelUpColors.Count; i++)
             {
                 _levelUpSequence.Append(_image.DOColor(_levelUpColors[i], _levelUpColorDuration)).SetEase(_levelUpEaseType);
             }
+
+            _levelUpSequence.Append(_image.DOColor(_levelUpColors[0], _levelUpColorDuration)).SetEase(_levelUpEaseType);
             _levelUpSequence.SetLoops(-1);
             _levelUpSequence.SetUpdate(true);
-            _levelUpSequence.Pause();
         }
     
     }

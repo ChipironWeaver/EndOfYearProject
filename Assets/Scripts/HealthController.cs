@@ -28,9 +28,6 @@ public class HealthController : MonoBehaviour
     
     public delegate void OnPlayerHeal();
     public static event OnPlayerHeal onPlayerHeal;
-    
-    public delegate void OnPlayerDeath();
-    public static event OnPlayerDeath onPlayerDeath;
 
     private float _currentCooldown;
     
@@ -85,7 +82,7 @@ public class HealthController : MonoBehaviour
     public void Death()
     {
         currentHealth = 0;
-        onPlayerDeath?.Invoke();
+        Actions.OnPlayerLose?.Invoke();
         print("im dead");
     }
 
