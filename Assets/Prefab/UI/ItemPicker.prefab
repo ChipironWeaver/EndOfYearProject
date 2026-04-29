@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: ItemName
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 714e80090ca16e94ab545eac42bef7ec, type: 2}
+  m_sharedMaterial: {fileID: -7037597162705501048, guid: 714e80090ca16e94ab545eac42bef7ec, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -92,13 +92,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 67.1
+  m_fontSize: 64
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -275,6 +275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   _image: {fileID: 8268786252491226313}
   _background: {fileID: 4587844541304422499}
+  _button: {fileID: 7994554402556829318}
   _backgroundPerRarity:
   - Background: {fileID: -1879836466, guid: 116e5b093f229834d9f30a606e77b907, type: 3}
     ItemRarity: 0
@@ -286,7 +287,6 @@ MonoBehaviour:
     ItemRarity: 3
   _name: {fileID: 4391142634316254696}
   _description: {fileID: 1143254522969912199}
-  _button: {fileID: 7994554402556829318}
 --- !u!1 &6474452795843036452
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,8 +434,8 @@ MonoBehaviour:
     meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow meow
     meow meow meow '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 714e80090ca16e94ab545eac42bef7ec, type: 2}
+  m_sharedMaterial: {fileID: -7037597162705501048, guid: 714e80090ca16e94ab545eac42bef7ec, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
