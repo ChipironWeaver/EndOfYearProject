@@ -10,23 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f42dca39518fb564abb5672a046b5b57, type: 3}
-  m_Name: CandyCat
+  m_Name: SleepyPotato
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemName: Candy Cat
-  description: 'candy magnet ...
+  itemName: SleepyPotato
+  description: 'so sleepy ...
 
-    +3 magnetisme.....'
-  sprite: {fileID: 21300000, guid: be7bb4303862afd4baa126ef6942060d, type: 3}
+    +15% Exp
+
+    -1 Move Speed
+
+    -0.5 Fire Rate'
+  sprite: {fileID: 21300000, guid: 1b43b02b4089ca04eb31bb3ae5e823a8, type: 3}
   rarity: 0
-  statBoosts: 4
+  statBoosts: 73
   setStats: 0
-  expMultiplier: 0
+  expMultiplier: 0.15
   moneyMultiplier: 0
-  enemyDropFollowRange: 3
-  moveSpeed: 0
+  enemyDropFollowRange: 0
+  moveSpeed: -1
   gravityForce: 0
   jumpForce: 0
-  fireRate: 0
+  fireRate: -0.5
   fireRateMultiplier: 0
   numberOfProjectile: 0
   projectileSpeed: 0

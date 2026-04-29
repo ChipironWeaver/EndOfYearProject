@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   _detectRange: 5
-  _moveSpeed: 5
+  _moveSpeed: 7.5
 --- !u!54 &5055930033165625747
 Rigidbody:
   m_ObjectHideFlags: 0

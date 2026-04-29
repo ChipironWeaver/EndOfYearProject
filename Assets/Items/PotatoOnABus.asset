@@ -10,30 +10,39 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f42dca39518fb564abb5672a046b5b57, type: 3}
-  m_Name: CandyCat
+  m_Name: PotatoOnABus
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemName: Candy Cat
-  description: 'candy magnet ...
+  itemName: Potato On A Bus
+  description: 'Going somewhere, who knows
 
-    +3 magnetisme.....'
-  sprite: {fileID: 21300000, guid: be7bb4303862afd4baa126ef6942060d, type: 3}
-  rarity: 0
-  statBoosts: 4
+    +1 Move Speed
+
+    +10% Fire Rate
+
+    +15
+    Crit Rate
+
+    +30 Crit Damage
+
+    +3 Damage'
+  sprite: {fileID: 21300000, guid: 1c697206b6ef4b54aa80bcb4cc3bdcc7, type: 3}
+  rarity: 2
+  statBoosts: 14472
   setStats: 0
   expMultiplier: 0
   moneyMultiplier: 0
-  enemyDropFollowRange: 3
-  moveSpeed: 0
+  enemyDropFollowRange: 0
+  moveSpeed: 1
   gravityForce: 0
   jumpForce: 0
   fireRate: 0
-  fireRateMultiplier: 0
+  fireRateMultiplier: 0.1
   numberOfProjectile: 0
   projectileSpeed: 0
   isPiercing: 0
-  critRate: 0
-  critDamage: 0
-  damage: 0
+  critRate: 15
+  critDamage: 30
+  damage: 3
   damageMultiplier: 0
   maxHealth: 0
   maxHealthMultiplier: 0

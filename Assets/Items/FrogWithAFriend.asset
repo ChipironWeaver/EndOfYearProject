@@ -10,19 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f42dca39518fb564abb5672a046b5b57, type: 3}
-  m_Name: CandyCat
+  m_Name: FrogWithAFriend
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemName: Candy Cat
-  description: 'candy magnet ...
+  itemName: Frog with a friend
+  description: 'fren :D
 
-    +3 magnetisme.....'
-  sprite: {fileID: 21300000, guid: be7bb4303862afd4baa126ef6942060d, type: 3}
-  rarity: 0
-  statBoosts: 4
+    +25% Defense
+
+    +25% Dmg Res'
+  sprite: {fileID: 0}
+  rarity: 1
+  statBoosts: 1310720
   setStats: 0
   expMultiplier: 0
   moneyMultiplier: 0
-  enemyDropFollowRange: 3
+  enemyDropFollowRange: 0
   moveSpeed: 0
   gravityForce: 0
   jumpForce: 0
@@ -38,9 +40,9 @@ MonoBehaviour:
   maxHealth: 0
   maxHealthMultiplier: 0
   defense: 0
-  defenseMultiplier: 0
+  defenseMultiplier: 0.25
   dmgResistance: 0
-  dmgResistanceMultiplier: 0
+  dmgResistanceMultiplier: 0.25
   healRate: 0
   healAmount: 0
   invincibleTime: 0

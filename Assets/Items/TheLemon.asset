@@ -10,19 +10,32 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f42dca39518fb564abb5672a046b5b57, type: 3}
-  m_Name: CandyCat
+  m_Name: TheLemon
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemName: Candy Cat
-  description: 'candy magnet ...
+  itemName: The Lemon
+  description: 'She will lick you apart
 
-    +3 magnetisme.....'
-  sprite: {fileID: 21300000, guid: be7bb4303862afd4baa126ef6942060d, type: 3}
-  rarity: 0
-  statBoosts: 4
+    +20% Exp
+
+    +75% Crit Damage
+
+    +5
+    Damage
+
+    +50% Damage
+
+    -10 Max Health
+
+    -25% Health
+
+    +10 Cool Points'
+  sprite: {fileID: 21300000, guid: ff7ac12a2d0bfac498f1d1e1a0e45ca7, type: 3}
+  rarity: 3
+  statBoosts: 126977
   setStats: 0
-  expMultiplier: 0
+  expMultiplier: 0.2
   moneyMultiplier: 0
-  enemyDropFollowRange: 3
+  enemyDropFollowRange: 0
   moveSpeed: 0
   gravityForce: 0
   jumpForce: 0
@@ -32,11 +45,11 @@ MonoBehaviour:
   projectileSpeed: 0
   isPiercing: 0
   critRate: 0
-  critDamage: 0
-  damage: 0
-  damageMultiplier: 0
-  maxHealth: 0
-  maxHealthMultiplier: 0
+  critDamage: 75
+  damage: 5
+  damageMultiplier: 0.5
+  maxHealth: -10
+  maxHealthMultiplier: -0.25
   defense: 0
   defenseMultiplier: 0
   dmgResistance: 0

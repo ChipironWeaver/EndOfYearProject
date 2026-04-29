@@ -90,7 +90,7 @@ public class PlayerStatisticController : MonoBehaviour
         if(statEnum.HasFlag(StatType.InvincibleTime)) playerStats.invincibleTime += stats.invincibleTime;
 
         if(statEnum.HasFlag(StatType.ItemPerLevel)) playerStats.itemPerLevel =  Mathf.Clamp(playerStats.itemPerLevel + stats.itemPerLevel,0,6);
-        if(statEnum.HasFlag(StatType.ItemChoicePerLevel)) playerStats.itemChoicePerLevel = Mathf.Clamp(stats.itemChoicePerLevel + playerStats.itemChoicePerLevel,1,5);
+        if(statEnum.HasFlag(StatType.ItemChoicePerLevel)) playerStats.itemChoicePerLevel = Mathf.Clamp(stats.itemChoicePerLevel + playerStats.itemChoicePerLevel,1,4);
 
         ApplyStatsOnComponent();
     }

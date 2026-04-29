@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class PlayerLevelController : MonoBehaviour
 {
-    [CurveRange(0,0,100,200000)]
+    [CurveRange(0,0,100,50000)]
     public AnimationCurve expRequirementPetLevel;
     public float currentExp;
     public int currentLevel;
