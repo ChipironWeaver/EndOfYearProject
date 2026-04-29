@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: The Lemon
   description: 'She will lick you apart
 
-    +20% Exp
+    +75% Exp
 
     +75% Crit Damage
 
@@ -33,7 +33,7 @@ MonoBehaviour:
   rarity: 3
   statBoosts: 126977
   setStats: 0
-  expMultiplier: 0.2
+  expMultiplier: 0.75
   moneyMultiplier: 0
   enemyDropFollowRange: 0
   moveSpeed: 0

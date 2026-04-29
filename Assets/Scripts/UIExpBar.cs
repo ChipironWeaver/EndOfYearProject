@@ -76,7 +76,6 @@ public class UIExpBar : MonoBehaviour
     [Button]
     private void UpdateBar()
     {
-        print(_inLevelUp);
         if(_inLevelUp) return;
         AnimationCurve levelCurve = PlayerInstance.playerLevelController.expRequirementPetLevel;
         int currentLevel = PlayerInstance.playerLevelController.currentLevel;

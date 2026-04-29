@@ -238,6 +238,8 @@ MonoBehaviour:
   _numberRange: {x: 3, y: 6.5}
   _prefabWeights:
   - prefab: {fileID: 5339835109200159086, guid: a959fff38c629a949a556c016226f582, type: 3}
-    weight: 2
+    weight: 4
   - prefab: {fileID: 5339835109200159086, guid: cc38a5d004910f940af55670fbb9149b, type: 3}
-    weight: 3
+    weight: 2
+  - prefab: {fileID: 5339835109200159086, guid: ab56ab48ddabd8b408696b5c15d44df8, type: 3}
+    weight: 1

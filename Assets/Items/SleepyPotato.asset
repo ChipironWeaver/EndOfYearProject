@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: SleepyPotato
   description: 'so sleepy ...
 
-    +15% Exp
+    +50% Exp
 
     -1 Move Speed
 
@@ -24,7 +24,7 @@ MonoBehaviour:
   rarity: 0
   statBoosts: 73
   setStats: 0
-  expMultiplier: 0.15
+  expMultiplier: 0.5
   moneyMultiplier: 0
   enemyDropFollowRange: 0
   moveSpeed: -1

@@ -15,14 +15,14 @@ MonoBehaviour:
   itemName: Thinking Potato
   description: 'HMmmmmmMmm
 
-    +10% Exp
+    +50% Exp
 
     -1 Damage'
   sprite: {fileID: 21300000, guid: 70e5d34108dfec547a13221d0369ccdc, type: 3}
   rarity: 1
   statBoosts: 8193
   setStats: 0
-  expMultiplier: 0.1
+  expMultiplier: 0.5
   moneyMultiplier: 0
   enemyDropFollowRange: 0
   moveSpeed: 0

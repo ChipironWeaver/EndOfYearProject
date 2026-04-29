@@ -235,9 +235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4720053ebccfa274eab0879e7ebb841a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  _numberRange: {x: 0.5, y: 2.5}
+  _numberRange: {x: 1.5, y: 2.5}
   _prefabWeights:
   - prefab: {fileID: 5339835109200159086, guid: 5d2c50e6a8eeb5d4da8847a765627f19, type: 3}
-    weight: 2
-  - prefab: {fileID: 5339835109200159086, guid: bbcb79313d6c07e47b448a3d6da729ca, type: 3}
-    weight: 3
+    weight: 1

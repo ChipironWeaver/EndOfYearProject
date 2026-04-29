@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Lemon Mouse
   description: 'bitter sweet...
 
-    +15% Exp
+    +30% Exp
 
     +15 Max Health
 
@@ -25,7 +25,7 @@ MonoBehaviour:
   rarity: 1
   statBoosts: 2129921
   setStats: 0
-  expMultiplier: 0.15
+  expMultiplier: 0.3
   moneyMultiplier: 0
   enemyDropFollowRange: 0
   moveSpeed: 0

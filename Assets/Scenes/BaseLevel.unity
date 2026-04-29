@@ -3374,7 +3374,7 @@ MonoBehaviour:
     healAmount: 0
     invincibleTime: 0.5
     itemPerLevel: 1
-    itemChoicePerLevel: 2.5
+    itemChoicePerLevel: 3
   playerStats:
     expMultiplier: 0
     moneyMultiplier: 0
@@ -3419,25 +3419,25 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 26.03939
-      inSlope: 21.56469
-      outSlope: 21.56469
+      value: 6.079463
+      inSlope: 20.821672
+      outSlope: 20.821672
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.080340706
+      outWeight: 0.10414669
     - serializedVersion: 3
-      time: 12.619905
-      value: 1681.9613
-      inSlope: 82.08463
-      outSlope: 82.08463
+      time: 13.138014
+      value: 337.9166
+      inSlope: 44.40164
+      outSlope: 44.40164
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.06319704
+      inWeight: 0.10518868
       outWeight: 0.15136792
     - serializedVersion: 3
-      time: 57.05307
-      value: 13745.995
+      time: 57.656384
+      value: 8001.3135
       inSlope: 360.47906
       outSlope: 360.47906
       tangentMode: 0
@@ -3445,22 +3445,22 @@ MonoBehaviour:
       inWeight: 0.14800337
       outWeight: 0.09720627
     - serializedVersion: 3
-      time: 85.22597
-      value: 30801.068
-      inSlope: 901.38
-      outSlope: 901.38
+      time: 83.26518
+      value: 19389.725
+      inSlope: 567.2009
+      outSlope: 567.2009
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.15722139
-      outWeight: 0.4417934
+      inWeight: 0.31077337
+      outWeight: 0.41971943
     - serializedVersion: 3
       time: 100
-      value: 50000
-      inSlope: 1896.3893
-      outSlope: 1896.3893
+      value: 31063.826
+      inSlope: 783.68506
+      outSlope: 783.68506
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.2695901
+      inWeight: 0.36017442
       outWeight: 0.33333334
     m_PreInfinity: 2
     m_PostInfinity: 2
