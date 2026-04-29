@@ -93,7 +93,7 @@ public class EnemySpawner : MonoBehaviour
         }
         else
         {
-            Debug.Log("Win");
+            Actions.OnPlayerWin?.Invoke();
             this.enabled = false;
         }
         

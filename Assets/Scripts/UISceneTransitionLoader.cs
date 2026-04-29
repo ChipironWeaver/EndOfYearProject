@@ -1,11 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using NaughtyAttributes;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Sequence = DG.Tweening.Sequence;
+
 
 public class UISceneTransitionLoader : MonoBehaviour
 {
@@ -38,26 +41,20 @@ public class UISceneTransitionLoader : MonoBehaviour
                 color = sceneColorTransition.color;
             }
         }
-        StartCoroutine(FadeCoroutine(Color.clear,color, sceneName));
+        Sequence FadeOutSequence = DOTween.Sequence();
+        FadeOutSequence.Append(_image.DOColor(color, _fadeDuration));
+        FadeOutSequence.OnComplete(() =>
+        {
+            Time.timeScale = 1;
+            if (sceneName != null) SceneManager.LoadScene(sceneName);
+        }) ;
+        FadeOutSequence.SetUpdate(true);
     }
 
     private void FadeIn()
     {
-        StartCoroutine(FadeCoroutine(_autoFadeColor, Color.clear));
-    }
-
-    private IEnumerator FadeCoroutine(Color firstColor, Color secondColor, string sceneName = null)
-    {
-        float time = 0;
-        while (time < _fadeDuration)
-        {
-            _image.color = Color.Lerp(firstColor, secondColor, time / _fadeDuration);
-            time += Time.deltaTime;
-            yield return new WaitForNextFrameUnit();
-        }
-        if (sceneName != null) 
-        {
-            SceneManager.LoadScene(sceneName);
-        }
+        _image.color = _autoFadeColor;
+        Sequence FadeInSequence = DOTween.Sequence();
+        FadeInSequence.Append(_image.DOColor(Color.clear, _fadeDuration));
     }
 }

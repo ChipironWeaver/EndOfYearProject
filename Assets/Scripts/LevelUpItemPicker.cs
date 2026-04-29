@@ -62,7 +62,8 @@ public class LevelUpItemPicker : MonoBehaviour
         _blurImage.enabled = true;
         _blurImage.material.SetInteger("_Blur", 0);
         Sequence fadeInSequence = DOTween.Sequence();
-        fadeInSequence.Append(DOTween.To(()=> _blurImage.material.GetInteger("_Blur"), x=>_blurImage.material.SetInteger("_Blur",x), _blurAmount, _blurDuration));
+        fadeInSequence.Append(DOTween.To(() => _blurImage.material.GetInteger("_Blur"),
+            x => _blurImage.material.SetInteger("_Blur", x), _blurAmount, _blurDuration));
         fadeInSequence.Join(_image.DOColor(_targetColor, _panelTime));
         fadeInSequence.SetUpdate(true);
         fadeInSequence.OnComplete(StartThePanel);
