@@ -3355,16 +3355,16 @@ MonoBehaviour:
     moveSpeed: 5
     gravityForce: -18
     jumpForce: 3
-    fireRate: 1.5
+    fireRate: 1.2
     fireRateMultiplier: 1
     numberOfProjectile: 1
     projectileSpeed: 40
     isPiercing: 0
     critRate: 5
-    critDamage: 50
-    damage: 4
+    critDamage: 20
+    damage: 8
     damageMultiplier: 1
-    maxHealth: 50
+    maxHealth: 100
     maxHealthMultiplier: 1
     defense: 0
     defenseMultiplier: 1
@@ -3419,7 +3419,7 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 26.039429
+      value: 26.03939
       inSlope: 21.56469
       outSlope: 21.56469
       tangentMode: 0
@@ -3427,22 +3427,22 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.080340706
     - serializedVersion: 3
-      time: 12.762148
-      value: 511.74863
-      inSlope: 48.98383
-      outSlope: 48.98383
+      time: 12.619905
+      value: 1681.9613
+      inSlope: 82.08463
+      outSlope: 82.08463
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.06319704
-      outWeight: 0.032911442
+      outWeight: 0.15136792
     - serializedVersion: 3
       time: 57.05307
       value: 13745.995
-      inSlope: 678.8716
-      outSlope: 678.8716
+      inSlope: 360.47906
+      outSlope: 360.47906
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.26536134
+      inWeight: 0.14800337
       outWeight: 0.09720627
     - serializedVersion: 3
       time: 85.22597

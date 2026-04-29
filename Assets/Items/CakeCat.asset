@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Cake Cat
   description: '>:3c
 
-    +0.8 Fire Rate
+    +0.4 Fire Rate
 
     +10 Crit Rate
 
@@ -35,7 +35,7 @@ MonoBehaviour:
   moveSpeed: 0
   gravityForce: 0
   jumpForce: 0
-  fireRate: 0.8
+  fireRate: 0.4
   fireRateMultiplier: 0
   numberOfProjectile: 0
   projectileSpeed: 0

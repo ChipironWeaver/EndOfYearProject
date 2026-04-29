@@ -17,7 +17,7 @@ MonoBehaviour:
 
     +1 Move Speed
 
-    +0.5 Fire Rate
+    +0.25 Fire Rate
 
     +1
     Damage'
@@ -31,7 +31,7 @@ MonoBehaviour:
   moveSpeed: 1
   gravityForce: 0
   jumpForce: 0
-  fireRate: 0.5
+  fireRate: 0.25
   fireRateMultiplier: 0
   numberOfProjectile: 0
   projectileSpeed: 0

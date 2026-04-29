@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Fatou
   description: 'Bee Not Afraid
 
-    +20% Fire Rate
+    +10% Fire Rate
 
     +0.5 Projectile
 
@@ -32,7 +32,7 @@ MonoBehaviour:
   gravityForce: 0
   jumpForce: 0
   fireRate: 0
-  fireRateMultiplier: 0.2
+  fireRateMultiplier: 0.1
   numberOfProjectile: 0.5
   projectileSpeed: 0
   isPiercing: 0

@@ -33,7 +33,7 @@ public class RandomInstantiate : MonoBehaviour
                 }
             }
             GameObject instantiated = Instantiate(toInstantiate);
-            instantiated.transform.position = transform.position + new Vector3(0,0,0.5f);
+            instantiated.transform.position = transform.position + new Vector3(Random.Range(-30,30)/100,Random.Range(-30,30)/100,0.5f);
         }
     }
     

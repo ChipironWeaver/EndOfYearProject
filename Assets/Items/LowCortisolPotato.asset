@@ -55,7 +55,7 @@ MonoBehaviour:
   defenseMultiplier: 0.2
   dmgResistance: 0
   dmgResistanceMultiplier: 0.2
-  healRate: 0.2
+  healRate: 0.1
   healAmount: 2
   invincibleTime: 0
   itemPerLevel: 0

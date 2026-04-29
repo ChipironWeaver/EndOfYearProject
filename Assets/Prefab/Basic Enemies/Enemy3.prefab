@@ -204,8 +204,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03fac2822a841b845b7e882e2a92892c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealthManager
-  currentHealth: 200
-  maxHealth: 200
+  currentHealth: 400
+  maxHealth: 400
   damageResistance: 50
   defense: 0
   OnDeath:
@@ -237,7 +237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   _numberRange: {x: 2.5, y: 5}
   _prefabWeights:
-  - prefab: {fileID: 5339835109200159086, guid: 5d2c50e6a8eeb5d4da8847a765627f19, type: 3}
+  - prefab: {fileID: 5339835109200159086, guid: 2bf1f6b07ace9e14881d8125d16bac97, type: 3}
     weight: 2
   - prefab: {fileID: 5339835109200159086, guid: d7f4df901d7837d409450ee3be7017c3, type: 3}
     weight: 3
