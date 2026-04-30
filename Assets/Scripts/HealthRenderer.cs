@@ -1,3 +1,4 @@
+using DG.Tweening;
 using NaughtyAttributes;
 using TMPro;
 using UnityEngine;
@@ -66,8 +67,6 @@ public class HealthRenderer : MonoBehaviour
             }
         }
         
-        _bar.fillAmount = PlayerInstance.healthController.currentHealth / PlayerInstance.healthController.maxHealth;
-        
         _text.text = PlayerInstance.healthController.currentHealth.ToString("F0") + " / " + PlayerInstance.healthController.maxHealth.ToString("F0");
     }
     
@@ -83,21 +82,34 @@ public class HealthRenderer : MonoBehaviour
         HealthController.onPlayerDamage -= Damage;
         HealthController.onPlayerHeal -= Heal;
     }
-
+    //_bar.fillAmount = PlayerInstance.healthController.currentHealth / PlayerInstance.healthController.maxHealth;
     [Button]
     private void Damage()
     {
-        _flashColorHealth = _damageHealthColor;
-        _flashColorEdge = _damageEdgeColor;
-        _flashColorText= _damageTextColor;
-        _flashing = true;
+        _text.text = PlayerInstance.healthController.currentHealth.ToString("F0") + " / " + PlayerInstance.healthController.maxHealth.ToString("F0");
+        Sequence damageSequence = DOTween.Sequence();
+        damageSequence.SetUpdate(true);
+        damageSequence.Append(_bar.DOColor(_damageHealthColor, _flashDuration/2));
+        damageSequence.Join(_edge.DOColor(_damageEdgeColor, _flashDuration/2));
+        damageSequence.Join(_text.DOColor(_damageTextColor, _flashDuration/2));
+        damageSequence.Join(_bar.DOFillAmount(PlayerInstance.healthController.currentHealth / PlayerInstance.healthController.maxHealth, _flashDuration)).SetEase(Ease.InOutQuart);
+        damageSequence.Append(_bar.DOColor(_baseHealthColor, _flashDuration/2));
+        damageSequence.Join(_edge.DOColor(_baseEdgeColor, _flashDuration/2));
+        damageSequence.Join(_text.DOColor(_baseTextColor, _flashDuration/2));
+        
     }
     [Button]
     private void Heal()
     {
-        _flashColorHealth = _healHealthColor;
-        _flashColorEdge = _healEdgeColor;
-        _flashColorText= _healTextColor;
-        _flashing = true;
+        _text.text = PlayerInstance.healthController.currentHealth.ToString("F0") + " / " + PlayerInstance.healthController.maxHealth.ToString("F0");
+        Sequence healSequence = DOTween.Sequence();
+        healSequence.SetUpdate(true);
+        healSequence.Append(_bar.DOColor(_healHealthColor, _flashDuration/2));
+        healSequence.Join(_edge.DOColor(_healEdgeColor, _flashDuration/2));
+        healSequence.Join(_text.DOColor(_healTextColor, _flashDuration/2));
+        healSequence.Join(_bar.DOFillAmount(PlayerInstance.healthController.currentHealth / PlayerInstance.healthController.maxHealth, _flashDuration*0.75f)).SetEase(Ease.InOutQuart);
+        healSequence.Append(_bar.DOColor(_baseHealthColor, _flashDuration/2));
+        healSequence.Join(_edge.DOColor(_baseEdgeColor, _flashDuration/2));
+        healSequence.Join(_text.DOColor(_baseTextColor, _flashDuration/2));
     }
 }
