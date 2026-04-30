@@ -28,6 +28,16 @@ public class PlayerMovementController : MonoBehaviour
     [BoxGroup("Movement Settings")]
     public float jumpForce;
     
+    [SerializeField,BoxGroup("Animations")] 
+    private Animator _animator;
+    [SerializeField,BoxGroup("Animations")] 
+    private Transform _modelTransform;
+    [SerializeField,BoxGroup("Animations"),AnimatorParam("_animator")] 
+    private string _groundedParam;
+    [SerializeField,BoxGroup("Animations"),AnimatorParam("_animator")] 
+    private string _velocityParam;
+    
+    
     [HideInInspector]
     public bool isGrounded;
     
@@ -60,6 +70,26 @@ public class PlayerMovementController : MonoBehaviour
         _characterController.Move(moveDirection * Time.deltaTime);
         
         transform.Rotate(new Vector3(0,-_mouse.x * _sensitivity * Time.deltaTime,0));
+        
+        if(_characterController.velocity.x + _characterController.velocity.z == 0)
+        {
+            _modelTransform.Rotate(new Vector3(0, _mouse.x * _sensitivity * Time.deltaTime, 0));
+        }
+        else
+        {
+            Vector2 vector2 = new Vector2(-_characterController.velocity.x,-_characterController.velocity.z);
+            float angle;
+            if (vector2.x < 0)
+            {
+                angle = 360 - (Mathf.Atan2(vector2.x, vector2.y) * Mathf.Rad2Deg * -1);
+            }
+            else
+            {
+                angle =  Mathf.Atan2(vector2.x, vector2.y) * Mathf.Rad2Deg;
+            }
+            _modelTransform.eulerAngles = new Vector3(0,angle , 0);
+        }
+        
         _cameraFollowPoint.localPosition =new Vector3(0,0,-_cameraDistance) ;
         
         Vector3 cameraRotation = new Vector3(Mathf.Clamp(-_mouse.y, -30f, 30f), 0, 0) * (_sensitivity * Time.deltaTime );
@@ -67,6 +97,9 @@ public class PlayerMovementController : MonoBehaviour
         cameraRotation.x = ClampAngle(cameraRotation.x, _angleClamp.x, _angleClamp.y);
         
         _pivot.eulerAngles = cameraRotation;
+        
+        _animator.SetBool(_groundedParam, isGrounded);
+        _animator.SetFloat(_velocityParam, _characterController.velocity.magnitude);
     }
 
     void OnMove(InputValue value)
