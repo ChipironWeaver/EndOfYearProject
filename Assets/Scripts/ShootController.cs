@@ -19,15 +19,15 @@ public class ShootController : MonoBehaviour
     [SerializeField,Required]
     private Transform _projectileSpawnPoint;
     [SerializeField,ReadOnly]
-    private float _currentCooldown;
+    public float currentCooldown;
     
     private void Update()
     {
-        _currentCooldown += Time.deltaTime;
-        if (_currentCooldown >= 1/fireRate)
+        currentCooldown += Time.deltaTime;
+        if (currentCooldown >= 1/fireRate)
         {
             InstantiateBullets();
-            _currentCooldown = 0;
+            currentCooldown = 0;
         }
     }
 

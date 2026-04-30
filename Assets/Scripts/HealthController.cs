@@ -36,7 +36,7 @@ public class HealthController : MonoBehaviour
         if(healRate > 0)
         {
             _currentCooldown += Time.deltaTime;
-            if (_currentCooldown >= 1/healRate)
+            if (_currentCooldown >= 5/healRate)
             {
                 Heal(healAmount);
                 _currentCooldown = 0;
@@ -83,7 +83,6 @@ public class HealthController : MonoBehaviour
     {
         currentHealth = 0;
         Actions.OnPlayerLose?.Invoke();
-        print("im dead");
     }
 
     public void SetMaxHealth(float newMaxHealth)
