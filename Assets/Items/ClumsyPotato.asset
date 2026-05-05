@@ -17,7 +17,7 @@ MonoBehaviour:
 
     -5Crit Rate
 
-    +25 Crit Damage
+    +35 Crit Damage
 
     +2 Damage '
   sprite: {fileID: 21300000, guid: b264fb7bbfcc8bd4d89b3afe98dce535, type: 3}
@@ -36,7 +36,7 @@ MonoBehaviour:
   projectileSpeed: 0
   isPiercing: 0
   critRate: -5
-  critDamage: 25
+  critDamage: 35
   damage: 2
   damageMultiplier: 0
   maxHealth: 0

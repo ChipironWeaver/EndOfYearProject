@@ -26,7 +26,6 @@ public class EnemySpawner : MonoBehaviour
     public AnimationCurve waveTime;
     [MinMaxSlider(10.0f, 500.0f)]
     public Vector2 waveTimeRange;
-    public int waveCount;
     
     public float spawnCooldown;
 
@@ -67,7 +66,7 @@ public class EnemySpawner : MonoBehaviour
 
     void Update()
     {
-        if (waveCount >= waveAmount)
+        if (currentWave <= waveAmount)
         {
             // Next Wave Check
             currentWaveTime += Time.deltaTime;

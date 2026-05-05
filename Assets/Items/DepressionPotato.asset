@@ -17,7 +17,7 @@ MonoBehaviour:
 
     -0.5 Fire Rate
 
-    +2 Damage
+    +3 Damage
 
     +10%
     Damage'
@@ -38,7 +38,7 @@ MonoBehaviour:
   isPiercing: 0
   critRate: 0
   critDamage: 0
-  damage: 2
+  damage: 3
   damageMultiplier: 0.1
   maxHealth: 0
   maxHealthMultiplier: 0
