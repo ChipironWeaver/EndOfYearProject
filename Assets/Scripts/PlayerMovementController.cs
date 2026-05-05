@@ -19,6 +19,9 @@ public class PlayerMovementController : MonoBehaviour
     [BoxGroup("MouseSettings"),Range(1,10),SerializeField]
     private float _cameraDistance;
     
+    [BoxGroup("MouseSettings"),SerializeField]
+    private Vector2 _cameraDistanceRange;
+    
     [BoxGroup("Movement Settings")]
     public float moveSpeed = 1;
     
@@ -106,6 +109,12 @@ public class PlayerMovementController : MonoBehaviour
     {
         _move = new Vector3(value.Get<Vector2>().x, 0, value.Get<Vector2>().y);
     }
+
+    private void OnScrollView(InputValue input)
+    {
+        _cameraDistance += input.Get<float>()/5 * -1;
+        _cameraDistance = Mathf.Clamp(_cameraDistance, _cameraDistanceRange.x, _cameraDistanceRange.y);
+    }
     
     private void OnJump(InputValue input)
     {
@@ -118,8 +127,6 @@ public class PlayerMovementController : MonoBehaviour
     private void OnLook(InputValue input)
     {
         _mouse = input.Get<Vector2>();
-        
-        
     }
     
     private float ClampAngle(float angle, float min, float max)
