@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f42dca39518fb564abb5672a046b5b57, type: 3}
+  m_Name: Ynau
+  m_EditorClassIdentifier: Assembly-CSharp::Item
+  itemName: YnAU
+  description: 'ynau.
+
+    +everything
+
+    +everything
+
+    +everything
+
+    +everything
+
+    +everything
+
+    +everything
+
+    +everything
+
+    +everything'
+  sprite: {fileID: 21300000, guid: a11368ccf2942b742ada1e5382df5910, type: 3}
+  rarity: 3
+  statBoosts: -1
+  setStats: 0
+  expMultiplier: 0.05
+  moneyMultiplier: 0.05
+  enemyDropFollowRange: 2
+  moveSpeed: 0.5
+  gravityForce: 0.5
+  jumpForce: 0.5
+  fireRate: 0.1
+  fireRateMultiplier: 0.05
+  numberOfProjectile: 0.2
+  projectileSpeed: 0.5
+  isPiercing: 0
+  critRate: 5
+  critDamage: 10
+  damage: 1
+  damageMultiplier: 0.05
+  maxHealth: 1
+  maxHealthMultiplier: 0.1
+  defense: 1
+  defenseMultiplier: 0.1
+  dmgResistance: 1
+  dmgResistanceMultiplier: 0.1
+  healRate: 0.1
+  healAmount: 0.5
+  invincibleTime: 0.1
+  itemPerLevel: 0.2
+  itemChoicePerLevel: 0.2
