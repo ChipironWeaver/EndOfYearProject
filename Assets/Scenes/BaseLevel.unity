@@ -326532,14 +326532,14 @@ MonoBehaviour:
     moveSpeed: 5
     gravityForce: -18
     jumpForce: 3
-    fireRate: 1.2
+    fireRate: 1.3
     fireRateMultiplier: 1
     numberOfProjectile: 1
     projectileSpeed: 40
     isPiercing: 0
-    critRate: 5
-    critDamage: 20
-    damage: 8
+    critRate: 20
+    critDamage: 30
+    damage: 10
     damageMultiplier: 1
     maxHealth: 100
     maxHealthMultiplier: 1
