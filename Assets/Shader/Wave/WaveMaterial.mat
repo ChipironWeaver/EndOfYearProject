@@ -50,8 +50,8 @@ Material:
     - _TimeMultiplier: 1.25
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _HighColor: {r: 0, g: 0.35390314, b: 0.8207547, a: 1}
-    - _LowColor: {r: 0.57075465, g: 0.848085, b: 1, a: 1}
+    - _HighColor: {r: 1, g: 0, b: 0.027406693, a: 1}
+    - _LowColor: {r: 0, g: 1, b: 0.9333334, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!114 &187878438497887726
