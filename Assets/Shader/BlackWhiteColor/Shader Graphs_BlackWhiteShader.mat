@@ -37,10 +37,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BlendDistance: 0.01
-    - _MaxOpacity: 1
+    - _BlendDistance: 0.3
+    - _MaxOpacity: 0.9
     - _MinOpacity: 0
-    - _Tolerance: 0.08
+    - _Tolerance: 0
     m_Colors:
     - _TargetedHue: {r: 1, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
