@@ -326898,7 +326898,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   _basePlayerStats:
-    expMultiplier: 900
+    expMultiplier: 1
     moneyMultiplier: 1
     enemyDropFollowRange: 5
     moveSpeed: 5

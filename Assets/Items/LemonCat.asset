@@ -15,14 +15,16 @@ MonoBehaviour:
   itemName: Lemon Cat
   description: 'Bitter sweet <3
 
-    +20% Exp
+    +5% Exp
 
     +10 Max Health'
+  isVideo: 0
   sprite: {fileID: 21300000, guid: 9541bcf92a61fe346ae84fe4507ae3e4, type: 3}
+  videoClip: {fileID: 0}
   rarity: 0
   statBoosts: 32769
   setStats: 0
-  expMultiplier: 0.2
+  expMultiplier: 0.05
   moneyMultiplier: 0
   enemyDropFollowRange: 0
   moveSpeed: 0
