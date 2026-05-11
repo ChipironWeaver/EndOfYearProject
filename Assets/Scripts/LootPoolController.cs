@@ -18,7 +18,7 @@ public class LootPoolController : MonoBehaviour
     //select rarity
     //pick a random item from this rarity appened the items in a list, get a random index
 
-    public Item GetRandomItem()
+    public Item GetRandomItem(List<Item> blackList = null)
     {
         Item finalItem = _itemList[0];
         float totalRarityWeight = 0;
@@ -39,14 +39,25 @@ public class LootPoolController : MonoBehaviour
             }
         }
         List<Item> potentialItem = new List<Item>();
+        List<Item> potentialWhiteListItem = new List<Item>();
         foreach(Item item in _itemList)
         {
             if(item.rarity == targetRarity)
             {
                 potentialItem.Add(item);
+                if (blackList != null)
+                {
+                    if(!blackList.Contains(item)) potentialWhiteListItem.Add(item);
+                }
             }
         }
-
+        if (blackList != null)
+        {
+            if (potentialWhiteListItem.Count > 0)
+            {
+                return potentialWhiteListItem[Random.Range(0,potentialWhiteListItem.Count)];
+            }
+        }
         if(potentialItem.Count > 0)
         {
             finalItem = potentialItem[Random.Range(0,potentialItem.Count)];

@@ -50,6 +50,7 @@ public class LevelUpItemPicker : MonoBehaviour
             FadeIn();
         }
         else _numberOfItems += nextItems;
+        print(_numberOfItems);
     }
 
 
@@ -89,13 +90,16 @@ public class LevelUpItemPicker : MonoBehaviour
         _numberOfItems--;
         
         int numberOfItems = RandomRound(PlayerInstance.playerStatisticController.playerStats.itemChoicePerLevel);
+        List<Item> BlackList = new List<Item>();
         for (int i = 0; i < numberOfItems; i++)
         {
-            GameObject item = Instantiate(_itemPanelPrefab,transform);
-            _itemsPanels.Add(item);
-            item.transform.localScale = _baseItemPanelScale;
-            item.GetComponent<Button>().onClick.AddListener(StartThePanel);
-            item.GetComponent<ItemRenderer>().UpdateItemRender(LootPoolController.Instance.GetRandomItem());
+            GameObject itemPanel = Instantiate(_itemPanelPrefab,transform);
+            _itemsPanels.Add(itemPanel);
+            itemPanel.transform.localScale = _baseItemPanelScale;
+            itemPanel.GetComponent<Button>().onClick.AddListener(StartThePanel);
+            Item item = LootPoolController.Instance.GetRandomItem(BlackList);
+            itemPanel.GetComponent<ItemRenderer>().UpdateItemRender(item);
+            BlackList.Add(item);
         }
         DisplayPanel(0);
     }

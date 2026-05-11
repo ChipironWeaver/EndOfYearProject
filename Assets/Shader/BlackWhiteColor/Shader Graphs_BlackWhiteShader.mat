@@ -37,11 +37,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BlendDistance: 0.3
+    - _BlendDistance: 0
     - _MaxOpacity: 0.9
     - _MinOpacity: 0
     - _Tolerance: 0
     m_Colors:
-    - _TargetedHue: {r: 1, g: 0, b: 0, a: 1}
+    - _TargetedHue: {r: 0, g: 0.9623866, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

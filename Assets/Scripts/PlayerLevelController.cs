@@ -30,7 +30,6 @@ public class PlayerLevelController : MonoBehaviour
                 currentLevel++;
                 currentExp -= expRequirementPetLevel.Evaluate(100) - expRequirementPetLevel.Evaluate(99);
                 Actions.OnPlayerLevelUp?.Invoke();
-                return;
             }
         }
         else
@@ -39,7 +38,6 @@ public class PlayerLevelController : MonoBehaviour
             {
                 currentLevel++;
                 Actions.OnPlayerLevelUp?.Invoke();
-                return;
             }
         }
         Actions.OnPlayerEXPGained?.Invoke();

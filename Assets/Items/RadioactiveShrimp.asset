@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f42dca39518fb564abb5672a046b5b57, type: 3}
+  m_Name: RadioactiveShrimp
+  m_EditorClassIdentifier: Assembly-CSharp::Item
+  itemName: Radioactive Shrimp
+  description: 'I would NOT eat them
+
+    +3 Magnetisme
+
+    +20 Crit Rate
+
+    +30
+    Crit Damage
+
+    +2 Damage
+
+    -10% Max Health
+
+    -10% Defense'
+  sprite: {fileID: 21300000, guid: 51191098fe2f36246a9da022cb216544, type: 3}
+  rarity: 2
+  statBoosts: 342020
+  setStats: 0
+  expMultiplier: 0
+  moneyMultiplier: 0
+  enemyDropFollowRange: 3
+  moveSpeed: 0
+  gravityForce: 0
+  jumpForce: 0
+  fireRate: 0
+  fireRateMultiplier: 0
+  numberOfProjectile: 0
+  projectileSpeed: 0
+  isPiercing: 0
+  critRate: 20
+  critDamage: 30
+  damage: 2
+  damageMultiplier: 0
+  maxHealth: 0
+  maxHealthMultiplier: -0.1
+  defense: 0
+  defenseMultiplier: -0.1
+  dmgResistance: 0
+  dmgResistanceMultiplier: 0
+  healRate: 0
+  healAmount: 0
+  invincibleTime: 0
+  itemPerLevel: 0
+  itemChoicePerLevel: 0

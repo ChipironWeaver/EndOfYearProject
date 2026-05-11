@@ -44,7 +44,7 @@ Material:
     m_Floats:
     - _AngleOffset: 0
     - _CellDensity: 0.32
-    - _HeightMultiplie: 2
+    - _HeightMultiplie: 1.5
     - _QueueControl: 0
     - _QueueOffset: 0
     - _TimeMultiplier: 1.25
