@@ -50,7 +50,6 @@ public class LevelUpItemPicker : MonoBehaviour
             FadeIn();
         }
         else _numberOfItems += nextItems;
-        print(_numberOfItems);
     }
 
 

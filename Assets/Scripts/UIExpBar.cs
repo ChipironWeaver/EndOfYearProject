@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using DG.Tweening;
 using NaughtyAttributes;
+using TMPro;
 using UnityEngine;
 using Utkaka.ScaleNineSlicer.UI;
 
@@ -27,6 +28,9 @@ public class UIExpBar : MonoBehaviour
     [Foldout("Flash")]
     [SerializeField] private Ease _flashEaseType;
     
+    [Header("Level Text")]
+    [SerializeField] private TextMeshProUGUI _levelText;
+    
     private SlicedImage _image;
     private bool _inLevelUp;
 
@@ -42,8 +46,6 @@ public class UIExpBar : MonoBehaviour
         Actions.OnPlayerEXPGained -= UpdateBar;
         Actions.OnPlayerEXPGained -= Flash;
     }
-    
-    
     private void Start()
     {
         _image = GetComponent<SlicedImage>();
@@ -59,6 +61,7 @@ public class UIExpBar : MonoBehaviour
     
     public void LevelUp(bool isStart)
     {
+        _levelText.text = PlayerInstance.playerLevelController.currentLevel.ToString();
         if(isStart)
         {
             SetSequence(true);
@@ -68,8 +71,8 @@ public class UIExpBar : MonoBehaviour
         else
         {
             SetSequence(false);
-            UpdateBar();
             _inLevelUp = false;
+            UpdateBar();
         }
     }
 
@@ -90,6 +93,7 @@ public class UIExpBar : MonoBehaviour
             fillAmount = (currentExp - levelCurve.Evaluate(currentLevel)) / (levelCurve.Evaluate(currentLevel + 1) - levelCurve.Evaluate(currentLevel));
         }
         _image.fillAmount = fillAmount;
+        _levelText.text = PlayerInstance.playerLevelController.currentLevel.ToString();
     }
 
     private void SetSequence(bool isLevelUp)
