@@ -326844,6 +326844,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShootController
   fireRate: 2
   numberOfProjectiles: 1
+  range: 300
   projectileSpeed: 0
   _hasAutoTarget: 1
   _autoTargetTag: Enemy

@@ -7,6 +7,7 @@ public class ShootController : MonoBehaviour
 {
     public float fireRate;
     public float numberOfProjectiles;
+    public float range;
     public float projectileSpeed;
     [SerializeField]
     private bool _hasAutoTarget;
@@ -34,9 +35,9 @@ public class ShootController : MonoBehaviour
     private void InstantiateBullets()
     {
         Vector3 targetDirection = _projectileSpawnPoint.forward;
+        GameObject target = FindOneClosestEnemy();
         if (_hasAutoTarget)
         {
-            GameObject target = FindOneClosestEnemy();
             if (target)
             {
                 targetDirection = target.transform.position - _projectileSpawnPoint.position;
@@ -44,11 +45,24 @@ public class ShootController : MonoBehaviour
             }
         }
         
-        
-        for (int i = 0; i < RandomRound(numberOfProjectiles) ; i++)
+        Vector3 diff = target.transform.position - transform.position;
+        float curDistance = diff.sqrMagnitude;
+        print(curDistance);
+        if (curDistance < range)
         {
-            GameObject instantiate = Instantiate(_projectilePrefab, _projectileSpawnPoint.position, Quaternion.identity);
-            instantiate.GetComponent<Rigidbody>().AddForce(targetDirection * projectileSpeed, ForceMode.Impulse);
+            if (Physics.Raycast(_projectileSpawnPoint.position, targetDirection, out RaycastHit hit))
+            {
+                if (hit.collider.tag == _autoTargetTag)
+                {
+                    for (int i = 0; i < RandomRound(numberOfProjectiles); i++)
+                    {
+                        GameObject instantiate =
+                            Instantiate(_projectilePrefab, _projectileSpawnPoint.position, Quaternion.identity);
+                        instantiate.GetComponent<Rigidbody>()
+                            .AddForce(targetDirection * projectileSpeed, ForceMode.Impulse);
+                    }
+                }
+            }
         }
     }
     
