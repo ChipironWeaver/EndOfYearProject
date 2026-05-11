@@ -326864,6 +326864,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebd9f608aff6a4945a344f6d6a34c6ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  isAlive: 1
   currentHealth: 30
   maxHealth: 30
   maxHealthChangeBehavior: 1

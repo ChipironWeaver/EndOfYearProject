@@ -96,8 +96,8 @@ public class EnemySpawner : MonoBehaviour
             }
             else
             {
-                Actions.OnPlayerWin?.Invoke();
                 this.enabled = false;
+                Actions.OnPlayerWin?.Invoke();
             }
         }
     }

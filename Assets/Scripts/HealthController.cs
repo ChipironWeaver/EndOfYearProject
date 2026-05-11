@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class HealthController : MonoBehaviour
 {
+    public bool isAlive = true;
     [BoxGroup("Health")]
     public float currentHealth;
     [BoxGroup("Health")]
@@ -67,8 +68,6 @@ public class HealthController : MonoBehaviour
             {
                 Death();
             }
-
-
             onPlayerDamage?.Invoke();
         }
     }
@@ -81,8 +80,13 @@ public class HealthController : MonoBehaviour
 
     public void Death()
     {
-        currentHealth = 0;
-        Actions.OnPlayerLose?.Invoke();
+        if(isAlive)
+        {
+            currentHealth = 0;
+            isAlive = false;
+            Actions.OnPlayerWin?.Invoke();
+            print("win");
+        }
     }
 
     public void SetMaxHealth(float newMaxHealth)

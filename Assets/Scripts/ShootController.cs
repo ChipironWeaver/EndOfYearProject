@@ -43,7 +43,6 @@ public class ShootController : MonoBehaviour
             targetDirection.Normalize();
             Vector3 diff = target.transform.position - transform.position;
             float curDistance = diff.sqrMagnitude;
-            print(curDistance);
             if (curDistance < range)
             {
                 if (Physics.Raycast(_projectileSpawnPoint.position, targetDirection, out RaycastHit hit))
