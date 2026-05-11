@@ -1,6 +1,7 @@
 using System;
 using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.Video;
 
 [CreateAssetMenu(fileName = "New Item", menuName = "Item")]
 public class Item : ScriptableObject
@@ -8,7 +9,11 @@ public class Item : ScriptableObject
     public string itemName;
     [ResizableTextArea]
     public string description;
+    public bool isVideo;
+    [HideIf("isVideo")]
     public Sprite sprite;
+    [ShowIf("isVideo")]
+    public VideoClip videoClip;
     public ItemRarity rarity;
     //public ItemClass family;
     public StatType statBoosts;

@@ -20,7 +20,9 @@ MonoBehaviour:
     +0.5 Heal Rate
 
     + 2 Heal Amount'
+  isVideo: 0
   sprite: {fileID: 21300000, guid: ae074bd5af87e12479816ccde7723957, type: 3}
+  videoClip: {fileID: 0}
   rarity: 1
   statBoosts: 6324224
   setStats: 0

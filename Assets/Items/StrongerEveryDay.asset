@@ -10,28 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f42dca39518fb564abb5672a046b5b57, type: 3}
-  m_Name: GodSend
+  m_Name: StrongerEveryDay
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemName: God Send
-  description: 'that bagel must be amazing
+  itemName: Stronger
+  description: 'GETTING STRONG EVERYDAY
 
-    +30% Max Health
+    +strong
 
-    +30% Defense
+    +strong
 
-    +30%
-    DMG Res
+    +strong
 
-    +0.5 Heal Rate
-
-    +2 Heal Amount
-
-    +0.5 Invisible Time'
+    +strong'
   isVideo: 1
   sprite: {fileID: 0}
-  videoClip: {fileID: 32900000, guid: 13f469d1d14e7da42bae948b2a24edf8, type: 3}
-  rarity: 2
-  statBoosts: 16056320
+  videoClip: {fileID: 32900000, guid: 9e235b9291a6b584d9e9bbba4ecf5547, type: 3}
+  rarity: 1
+  statBoosts: 30720
   setStats: 0
   expMultiplier: 0
   moneyMultiplier: 0
@@ -44,18 +39,18 @@ MonoBehaviour:
   numberOfProjectile: 0
   projectileSpeed: 0
   isPiercing: 0
-  critRate: 0
-  critDamage: 0
-  damage: 0
-  damageMultiplier: 0
+  critRate: 10
+  critDamage: 20
+  damage: 1
+  damageMultiplier: 0.05
   maxHealth: 0
-  maxHealthMultiplier: 0.3
+  maxHealthMultiplier: 0
   defense: 0
-  defenseMultiplier: 0.3
+  defenseMultiplier: 0
   dmgResistance: 0
-  dmgResistanceMultiplier: 0.3
-  healRate: 0.5
-  healAmount: 2
-  invincibleTime: 0.5
+  dmgResistanceMultiplier: 0
+  healRate: 0
+  healAmount: 0
+  invincibleTime: 0
   itemPerLevel: 0
   itemChoicePerLevel: 0

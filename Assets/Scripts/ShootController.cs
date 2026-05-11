@@ -36,30 +36,27 @@ public class ShootController : MonoBehaviour
     {
         Vector3 targetDirection = _projectileSpawnPoint.forward;
         GameObject target = FindOneClosestEnemy();
-        if (_hasAutoTarget)
+
+        if (target)
         {
-            if (target)
+            targetDirection = target.transform.position - _projectileSpawnPoint.position;
+            targetDirection.Normalize();
+            Vector3 diff = target.transform.position - transform.position;
+            float curDistance = diff.sqrMagnitude;
+            print(curDistance);
+            if (curDistance < range)
             {
-                targetDirection = target.transform.position - _projectileSpawnPoint.position;
-                targetDirection.Normalize();
-            }
-        }
-        
-        Vector3 diff = target.transform.position - transform.position;
-        float curDistance = diff.sqrMagnitude;
-        print(curDistance);
-        if (curDistance < range)
-        {
-            if (Physics.Raycast(_projectileSpawnPoint.position, targetDirection, out RaycastHit hit))
-            {
-                if (hit.collider.tag == _autoTargetTag)
+                if (Physics.Raycast(_projectileSpawnPoint.position, targetDirection, out RaycastHit hit))
                 {
-                    for (int i = 0; i < RandomRound(numberOfProjectiles); i++)
+                    if (hit.collider.tag == _autoTargetTag)
                     {
-                        GameObject instantiate =
-                            Instantiate(_projectilePrefab, _projectileSpawnPoint.position, Quaternion.identity);
-                        instantiate.GetComponent<Rigidbody>()
-                            .AddForce(targetDirection * projectileSpeed, ForceMode.Impulse);
+                        for (int i = 0; i < RandomRound(numberOfProjectiles); i++)
+                        {
+                            GameObject instantiate =
+                                Instantiate(_projectilePrefab, _projectileSpawnPoint.position, Quaternion.identity);
+                            instantiate.GetComponent<Rigidbody>()
+                                .AddForce(targetDirection * projectileSpeed, ForceMode.Impulse);
+                        }
                     }
                 }
             }

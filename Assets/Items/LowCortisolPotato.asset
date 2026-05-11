@@ -12,23 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f42dca39518fb564abb5672a046b5b57, type: 3}
   m_Name: LowCortisolPotato
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemName: 
+  itemName: Low Cortisol Potato
   description: 'just chiillllll stress free
 
-    -10% Damage
+    -5% Damage
 
-    -10% Fire Rate
+    -5% Fire Rate
 
-    +20%
+    +10%
     Max Health
 
-    +20% Defense
+    +10% Defense
 
-    +20% Dmg Res
+    +10% Dmg Res
 
-    +0.2 Health Rate
+    +0.1 Health Rate
 
-    +2
+    +1.5
     Heal Amount'
   sprite: {fileID: 21300000, guid: 7dfcb4084d70d3e45a60389e2ba39493, type: 3}
   rarity: 2
@@ -41,22 +41,22 @@ MonoBehaviour:
   gravityForce: 0
   jumpForce: 0
   fireRate: 0
-  fireRateMultiplier: -0.1
+  fireRateMultiplier: -0.05
   numberOfProjectile: 0
   projectileSpeed: 0
   isPiercing: 0
   critRate: 0
   critDamage: 0
   damage: 0
-  damageMultiplier: -0.1
+  damageMultiplier: -0.05
   maxHealth: 0
-  maxHealthMultiplier: 0.2
+  maxHealthMultiplier: 0.1
   defense: 0
-  defenseMultiplier: 0.2
+  defenseMultiplier: 0.1
   dmgResistance: 0
-  dmgResistanceMultiplier: 0.2
+  dmgResistanceMultiplier: 0.1
   healRate: 0.1
-  healAmount: 2
+  healAmount: 1.5
   invincibleTime: 0
   itemPerLevel: 0
   itemChoicePerLevel: 0

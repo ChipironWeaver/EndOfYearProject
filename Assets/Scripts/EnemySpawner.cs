@@ -12,6 +12,8 @@ public class EnemySpawner : MonoBehaviour
     [ReadOnly]
     public List<GameObject> enemies;
 
+    public bool shouldSpawn;
+    
     public List<EnemyWeight> enemiesPrefab;
     [SerializeField] private int _spawnTries;
     public float spawnDistance;
@@ -66,36 +68,38 @@ public class EnemySpawner : MonoBehaviour
 
     void Update()
     {
-        if (currentWave <= waveAmount)
+        if(shouldSpawn)
         {
-            // Next Wave Check
-            currentWaveTime += Time.deltaTime;
-            if (enemies.Count <= 0 && _enemiesNeeded <= 0)
+            if (currentWave <= waveAmount)
             {
-                NextWave();
-            }
-            else if (currentWaveTime > EvaluateVector2(waveTimeRange, waveTime.Evaluate(currentWave)))
-            {
-                NextWave();
-            }
-
-            //try to spawn enemy
-            if (_enemiesNeeded > 0)
-            {
-                _currentSpawnCooldown += Time.deltaTime;
-                if (_currentSpawnCooldown >= spawnCooldown)
+                // Next Wave Check
+                currentWaveTime += Time.deltaTime;
+                if (enemies.Count <= 0 && _enemiesNeeded <= 0)
                 {
-                    SpawnEnemy();
-                    _currentSpawnCooldown = 0;
+                    NextWave();
+                }
+                else if (currentWaveTime > EvaluateVector2(waveTimeRange, waveTime.Evaluate(currentWave)))
+                {
+                    NextWave();
+                }
+
+                //try to spawn enemy
+                if (_enemiesNeeded > 0)
+                {
+                    _currentSpawnCooldown += Time.deltaTime;
+                    if (_currentSpawnCooldown >= spawnCooldown)
+                    {
+                        SpawnEnemy();
+                        _currentSpawnCooldown = 0;
+                    }
                 }
             }
+            else
+            {
+                Actions.OnPlayerWin?.Invoke();
+                this.enabled = false;
+            }
         }
-        else
-        {
-            Actions.OnPlayerWin?.Invoke();
-            this.enabled = false;
-        }
-        
     }
 
     private void SpawnEnemy()

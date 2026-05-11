@@ -95,7 +95,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 4
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerDamageDealer
   isTrueDamage: 0
-  damage: 50
+  damage: 40
   playerTag: Player
 --- !u!114 &8889785422272500968
 MonoBehaviour:
@@ -177,13 +177,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4720053ebccfa274eab0879e7ebb841a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  _numberRange: {x: 2, y: 3}
+  _numberRange: {x: 1.5, y: 2.5}
   _prefabWeights:
   - prefab: {fileID: 5339835109200159086, guid: 5d2c50e6a8eeb5d4da8847a765627f19, type: 3}
-    weight: 4
+    weight: 2
   - prefab: {fileID: 5339835109200159086, guid: d7f4df901d7837d409450ee3be7017c3, type: 3}
-    weight: 6
-  - prefab: {fileID: 5339835109200159086, guid: 2bf1f6b07ace9e14881d8125d16bac97, type: 3}
     weight: 1
 --- !u!1001 &681394514305922681
 PrefabInstance:
