@@ -331178,6 +331178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1871103882}
   - component: {fileID: 1871103881}
+  - component: {fileID: 1871103883}
   m_Layer: 0
   m_Name: InformationHolder
   m_TagString: Untagged
@@ -331278,7 +331279,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    minMaxWeight: {x: 0, y: 40}
+    minMaxWeight: {x: 2, y: 40}
   - itemRarity: 1
     normalizedWeight:
       serializedVersion: 2
@@ -331322,7 +331323,7 @@ MonoBehaviour:
       m_PreInfinity: 0
       m_PostInfinity: 0
       m_RotationOrder: 0
-    minMaxWeight: {x: 0, y: 30}
+    minMaxWeight: {x: 5, y: 30}
   - itemRarity: 2
     normalizedWeight:
       serializedVersion: 2
@@ -331366,7 +331367,7 @@ MonoBehaviour:
       m_PreInfinity: 0
       m_PostInfinity: 0
       m_RotationOrder: 0
-    minMaxWeight: {x: 0, y: 25}
+    minMaxWeight: {x: 2, y: 25}
   - itemRarity: 3
     normalizedWeight:
       serializedVersion: 2
@@ -331435,6 +331436,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1871103883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871103880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 964e6d88c5e51ae41b2fc6e145f30200, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &1878214129
 GameObject:
   m_ObjectHideFlags: 0

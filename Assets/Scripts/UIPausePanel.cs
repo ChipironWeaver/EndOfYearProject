@@ -22,6 +22,12 @@ public class UIPausePanel : MonoBehaviour
 
     private Image _image;
     private bool _canCancel;
+
+    private void OnEnable()
+    {
+        Singleton();
+    }
+    
     private void Start()
     {
         _image = GetComponent<Image>();

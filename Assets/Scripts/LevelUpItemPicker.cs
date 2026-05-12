@@ -54,6 +54,7 @@ public class LevelUpItemPicker : MonoBehaviour
     
     private void FadeIn()
     {
+        UIPausePanel.Instance.IsPaused = true;
         if(_numberOfItems <= 0) return;
         _bar.LevelUp(true);
         Cursor.lockState = CursorLockMode.Confined;
@@ -66,7 +67,6 @@ public class LevelUpItemPicker : MonoBehaviour
         fadeInSequence.Join(_image.DOColor(_targetColor, _panelTime));
         fadeInSequence.SetUpdate(true);
         fadeInSequence.OnComplete(StartThePanel);
-        UIPausePanel.Instance.IsPaused = true;
     }
 
     private void StartThePanel()
@@ -146,9 +146,10 @@ public class LevelUpItemPicker : MonoBehaviour
             _blurImage.enabled = false;
             Cursor.lockState = CursorLockMode.Locked;
             _bar.LevelUp(false);
+            UIPausePanel.Instance.IsPaused = false;
         });
 
-        UIPausePanel.Instance.IsPaused = false;
+        
     }
     
     private int RandomRound(float num)
