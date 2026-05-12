@@ -328279,43 +328279,43 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 6.079463
-      inSlope: 20.821672
-      outSlope: 20.821672
+      value: 0
+      inSlope: 12.47741
+      outSlope: 12.47741
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.10414669
+      outWeight: 0.13013098
     - serializedVersion: 3
-      time: 13.138014
-      value: 337.9166
-      inSlope: 44.40164
-      outSlope: 44.40164
+      time: 21.543804
+      value: 392.40103
+      inSlope: 33.31741
+      outSlope: 33.31741
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.10518868
-      outWeight: 0.15136792
+      outWeight: 0.0739259
     - serializedVersion: 3
       time: 57.656384
-      value: 8001.3135
-      inSlope: 360.47906
-      outSlope: 360.47906
+      value: 6357.208
+      inSlope: 320.5642
+      outSlope: 320.5642
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.14800337
-      outWeight: 0.09720627
+      outWeight: 0.275276
     - serializedVersion: 3
       time: 83.26518
-      value: 19389.725
-      inSlope: 567.2009
-      outSlope: 567.2009
+      value: 15405.535
+      inSlope: 524.35205
+      outSlope: 524.35205
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.31077337
-      outWeight: 0.41971943
+      outWeight: 0.37810752
     - serializedVersion: 3
       time: 100
-      value: 31063.826
+      value: 24680.848
       inSlope: 783.68506
       outSlope: 783.68506
       tangentMode: 0
@@ -331518,9 +331518,9 @@ MonoBehaviour:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 29.468084
-        inSlope: -31.374754
-        outSlope: -31.374754
+        value: 31.914892
+        inSlope: -43.43878
+        outSlope: -43.43878
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
@@ -331660,26 +331660,26 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
-      inSlope: 0.29524988
-      outSlope: 0.29524988
+      value: 0.031921387
+      inSlope: 0.20510547
+      outSlope: 0.20510547
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.064856716
+      outWeight: 0.08295626
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 3.1347516
-      outSlope: 3.1347516
+      inSlope: 2.5861704
+      outSlope: 2.5861704
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.02714932
+      inWeight: 0.036199093
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  enemyAmountRange: {x: 7, y: 80}
+  enemyAmountRange: {x: 10, y: 80}
   waveTime:
     serializedVersion: 2
     m_Curve:
