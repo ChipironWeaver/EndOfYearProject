@@ -13,12 +13,25 @@ MonoBehaviour:
   m_Name: IceElation
   m_EditorClassIdentifier: Assembly-CSharp::Item
   itemName: Ice Elation
-  description: ISOLATION DESTRUCTION
+  description: 'ISOLATION DESTRUCTION
+
+    +0.2 Fire Rate
+
+    +10% Fire Rate
+
+    +50
+    Crit Rate
+
+    +100 Crit Damage
+
+    +5 Damage
+
+    +50% Damage'
   isVideo: 1
   sprite: {fileID: 0}
   videoClip: {fileID: 32900000, guid: a1ddfb66b9a492c4c8d925a7a3aeab69, type: 3}
   rarity: 3
-  statBoosts: 0
+  statBoosts: 30912
   setStats: 0
   expMultiplier: 0
   moneyMultiplier: 0
@@ -26,15 +39,15 @@ MonoBehaviour:
   moveSpeed: 0
   gravityForce: 0
   jumpForce: 0
-  fireRate: 0
-  fireRateMultiplier: 0
+  fireRate: 0.2
+  fireRateMultiplier: 0.1
   numberOfProjectile: 0
   projectileSpeed: 0
   isPiercing: 0
-  critRate: 0
-  critDamage: 0
-  damage: 0
-  damageMultiplier: 0
+  critRate: 50
+  critDamage: 100
+  damage: 5
+  damageMultiplier: 0.5
   maxHealth: 0
   maxHealthMultiplier: 0
   defense: 0

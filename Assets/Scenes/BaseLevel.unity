@@ -329921,6 +329921,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 62634cc878ed64b448b471c45e239aac, type: 2}
   - {fileID: 11400000, guid: 6ab194ad1e522874a8ee074a5c4b4a64, type: 2}
   - {fileID: 11400000, guid: 8846cadca83040647bc78820e62b06bb, type: 2}
+  - {fileID: 11400000, guid: 119ea175a0fc8084aa13e1a641b0dcc4, type: 2}
   _rarityWeightPerWaves:
   - itemRarity: 0
     normalizedWeight:
