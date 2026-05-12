@@ -18385,7 +18385,31 @@ MonoBehaviour:
   IsPaused: 0
   _blurImage: {fileID: 1062682676}
   _fadeInDuration: 0.5
-  _fadeOutDuration: 0.5
+  _fadeOutDuration: 0.25
+  _EaseCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2.6933887
+      outSlope: 2.6933887
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.0693816
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: -1.0175252
+      outSlope: -1.0175252
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.06334841
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   _blurAmount: 0
   _initialPanelSize: {x: 0, y: 0.2, z: 0}
   _panelOffset: 600

@@ -13,6 +13,7 @@ public class UIPausePanel : MonoBehaviour
     [SerializeField] private Image _blurImage;
     [SerializeField] private float _fadeInDuration;
     [SerializeField] private float _fadeOutDuration;
+    [SerializeField] private AnimationCurve _EaseCurve;
     [SerializeField] private int _blurAmount;
     [SerializeField] private Vector3 _initialPanelSize;
     [SerializeField] private float _panelOffset;
@@ -42,8 +43,8 @@ public class UIPausePanel : MonoBehaviour
         fadeInSequence.SetUpdate(true);
         fadeInSequence.Append(DOTween.To(() => _blurImage.material.GetInteger("_Blur"),
             x => _blurImage.material.SetInteger("_Blur", x), _blurAmount, _fadeInDuration));
-        fadeInSequence.Join(transform.DOScale(Vector3.one, _fadeInDuration));
-        fadeInSequence.Join(_image.rectTransform.DOLocalMove(Vector3.zero, _fadeInDuration));
+        fadeInSequence.Join(transform.DOScale(Vector3.one, _fadeInDuration)).SetEase(_EaseCurve);
+        fadeInSequence.Join(_image.rectTransform.DOLocalMove(Vector3.zero, _fadeInDuration).SetEase(_EaseCurve));
         fadeInSequence.OnComplete(() =>
             {
                 foreach (Button button in _buttons) button.interactable = true;
@@ -62,8 +63,8 @@ public class UIPausePanel : MonoBehaviour
         fadeOutSequence.SetUpdate(true);
         fadeOutSequence.Append(DOTween.To(() => _blurImage.material.GetInteger("_Blur"),
             x => _blurImage.material.SetInteger("_Blur", x), 0, _fadeOutDuration));
-        fadeOutSequence.Join(transform.DOScale(_initialPanelSize, _fadeOutDuration));
-        fadeOutSequence.Join(_image.rectTransform.DOLocalMove(_panelDirection * _panelOffset, _fadeOutDuration));
+        fadeOutSequence.Join(transform.DOScale(_initialPanelSize, _fadeOutDuration).SetEase(_EaseCurve));
+        fadeOutSequence.Join(_image.rectTransform.DOLocalMove(_panelDirection * _panelOffset, _fadeOutDuration).SetEase(_EaseCurve));
         fadeOutSequence.OnComplete(() =>
             {
                 Time.timeScale = 1;
