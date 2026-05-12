@@ -42,8 +42,22 @@ public class UIGameOverScreen : MonoBehaviour
         _panel.transform.localScale = _initialPanelSize;
         _panel.transform.localPosition = _panelDirection * _panelOffset;
     }
+    
+    public void OnEnable()
+    {
+        Actions.OnPlayerLose += () => ShowGameOverScreen(false);
+        Actions.OnPlayerWin += () => ShowGameOverScreen(true);
+    }
+
+    public void OnDisable()
+    {
+        Actions.OnPlayerLose -= () => ShowGameOverScreen(false);
+        Actions.OnPlayerWin -= () => ShowGameOverScreen(true);
+    }
+    
     private void ShowGameOverScreen(bool win)
     {
+        UIPausePanel.Instance.IsPaused = true;
         Cursor.lockState = CursorLockMode.Confined;
         Time.timeScale = 0;
         _panel.sprite = win ? _winPanel : _losePanel;
@@ -68,17 +82,5 @@ public class UIGameOverScreen : MonoBehaviour
         fadeInSequence.Join(_background.DOColor(win ? _winBackgroundColor : _loseBackgroundColor, _fadeInDuration));
         fadeInSequence.Join(_panel.transform.DOScale(Vector3.one, _fadeInDuration));
         fadeInSequence.Join(_panel.rectTransform.DOLocalMove(Vector3.zero, _fadeInDuration));
-    }
-
-    public void OnEnable()
-    {
-        Actions.OnPlayerLose += () => ShowGameOverScreen(false);
-        Actions.OnPlayerWin += () => ShowGameOverScreen(true);
-    }
-
-    public void OnDisable()
-    {
-        Actions.OnPlayerLose -= () => ShowGameOverScreen(false);
-        Actions.OnPlayerWin -= () => ShowGameOverScreen(true);
     }
 }

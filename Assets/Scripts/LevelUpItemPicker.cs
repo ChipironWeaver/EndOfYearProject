@@ -51,8 +51,7 @@ public class LevelUpItemPicker : MonoBehaviour
         }
         else _numberOfItems += nextItems;
     }
-
-
+    
     private void FadeIn()
     {
         if(_numberOfItems <= 0) return;
@@ -67,6 +66,7 @@ public class LevelUpItemPicker : MonoBehaviour
         fadeInSequence.Join(_image.DOColor(_targetColor, _panelTime));
         fadeInSequence.SetUpdate(true);
         fadeInSequence.OnComplete(StartThePanel);
+        UIPausePanel.Instance.IsPaused = true;
     }
 
     private void StartThePanel()
@@ -148,6 +148,7 @@ public class LevelUpItemPicker : MonoBehaviour
             _bar.LevelUp(false);
         });
 
+        UIPausePanel.Instance.IsPaused = false;
     }
     
     private int RandomRound(float num)
