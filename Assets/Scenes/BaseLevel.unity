@@ -331679,7 +331679,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  enemyAmountRange: {x: 10, y: 80}
+  enemyAmountRange: {x: 10, y: 120}
   waveTime:
     serializedVersion: 2
     m_Curve:
