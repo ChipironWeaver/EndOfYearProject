@@ -32,7 +32,6 @@ public class UIPausePanel : MonoBehaviour
     private void ShowPauseMenu()
     {
         IsPaused = true;
-        _canCancel = true;
         Cursor.lockState = CursorLockMode.Confined;
         Time.timeScale = 0;
 
@@ -48,6 +47,7 @@ public class UIPausePanel : MonoBehaviour
         fadeInSequence.OnComplete(() =>
             {
                 foreach (Button button in _buttons) button.interactable = true;
+                _canCancel = true;
             }
         );
     }
@@ -55,8 +55,7 @@ public class UIPausePanel : MonoBehaviour
     private void HidePauseMenu()
     {
         foreach (Button button in _buttons) button.interactable = false; 
-        IsPaused = false;
-        _canCancel = false;
+        
         Cursor.lockState = CursorLockMode.Locked;
 
         Sequence fadeOutSequence = DOTween.Sequence();
@@ -69,6 +68,8 @@ public class UIPausePanel : MonoBehaviour
             {
                 Time.timeScale = 1;
                 _blurImage.enabled = false;
+                IsPaused = false;
+                _canCancel = false;
             }
         );
     }
