@@ -84,8 +84,7 @@ public class HealthController : MonoBehaviour
         {
             currentHealth = 0;
             isAlive = false;
-            Actions.OnPlayerWin?.Invoke();
-            print("win");
+            Actions.OnPlayerLose?.Invoke();
         }
     }
 

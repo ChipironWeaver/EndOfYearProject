@@ -72,11 +72,11 @@ public class PlayerMovementController : MonoBehaviour
         
         _characterController.Move(moveDirection * Time.deltaTime);
         
-        transform.Rotate(new Vector3(0,-_mouse.x * _sensitivity * Time.deltaTime,0));
+        transform.Rotate(new Vector3(0,_mouse.x * _sensitivity * Time.deltaTime,0));
         
         if(_characterController.velocity.x + _characterController.velocity.z == 0)
         {
-            _modelTransform.Rotate(new Vector3(0, _mouse.x * _sensitivity * Time.deltaTime, 0));
+            _modelTransform.Rotate(new Vector3(0, -_mouse.x * _sensitivity * Time.deltaTime, 0));
         }
         else
         {
