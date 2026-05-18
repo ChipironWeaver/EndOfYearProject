@@ -1,13 +1,10 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 using NaughtyAttributes;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using Sequence = DG.Tweening.Sequence;
 
 
 public class UISceneTransitionLoader : MonoBehaviour
@@ -55,6 +52,21 @@ public class UISceneTransitionLoader : MonoBehaviour
     {
         _image.color = _autoFadeColor;
         Sequence FadeInSequence = DOTween.Sequence();
+        print("im starting");
         FadeInSequence.Append(_image.DOColor(Color.clear, _fadeDuration));
+        FadeInSequence.OnComplete(() =>
+            {
+                _image.color = Color.clear;
+                print("done");
+            }
+        );
+        FadeInSequence.SetUpdate(true);
+        FadeInSequence.Play();
+    }
+
+    [Button]
+    private void Test()
+    {
+        Time.timeScale = 1;
     }
 }

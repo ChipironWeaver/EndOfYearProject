@@ -39,6 +39,7 @@ public class UIGameOverScreen : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1;
         _panel.transform.localScale = _initialPanelSize;
         _panel.transform.localPosition = _panelDirection * _panelOffset;
     }
