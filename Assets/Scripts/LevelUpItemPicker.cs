@@ -20,6 +20,10 @@ public class LevelUpItemPicker : MonoBehaviour
     [SerializeField] private Vector3 _baseItemPanelScale;
     [SerializeField] private float _itemPanelFadeDuration;
     [SerializeField] private Ease _itemPanelEase;
+    [Header("Audio")]
+    [SerializeField] private AudioClip _levelUpSound;
+    [SerializeField] private float _levelUpSoundVolume;
+    
     private List<GameObject> _itemsPanels = new List<GameObject>();
 
     private int _numberOfItems;
@@ -100,6 +104,7 @@ public class LevelUpItemPicker : MonoBehaviour
             itemPanel.GetComponent<ItemRenderer>().UpdateItemRender(item);
             BlackList.Add(item);
         }
+        if(_levelUpSound) AudioSource.PlayClipAtPoint(_levelUpSound, PlayerInstance.Instance.transform.position, _levelUpSoundVolume);
         DisplayPanel(0);
     }
 

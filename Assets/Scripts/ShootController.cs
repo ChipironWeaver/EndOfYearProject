@@ -19,8 +19,11 @@ public class ShootController : MonoBehaviour
     private GameObject _projectilePrefab;
     [SerializeField,Required]
     private Transform _projectileSpawnPoint;
-    [SerializeField,ReadOnly]
+
     public float currentCooldown;
+    [Header("Audio")]
+    [SerializeField] private AudioClip _shotSound;
+    [SerializeField] private float _shotVolume;
     
     private void Update()
     {
@@ -49,6 +52,7 @@ public class ShootController : MonoBehaviour
                 {
                     if (hit.collider.tag == _autoTargetTag)
                     {
+                        if(_shotSound) AudioSource.PlayClipAtPoint(_shotSound, transform.position, _shotVolume);
                         for (int i = 0; i < RandomRound(numberOfProjectiles); i++)
                         {
                             GameObject instantiate =

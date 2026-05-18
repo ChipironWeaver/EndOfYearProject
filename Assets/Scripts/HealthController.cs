@@ -23,6 +23,11 @@ public class HealthController : MonoBehaviour
     public float healRate = -1;
     [BoxGroup("Auto Heal")]
     public float healAmount;
+    
+    [SerializeField,BoxGroup("Sound")]
+    private AudioClip _damageSound;
+    [SerializeField,BoxGroup("Sound")]
+    private float _damageSoundVolume;
 
     public delegate void OnPlayerDamage();
     public static event OnPlayerDamage onPlayerDamage;
@@ -49,6 +54,8 @@ public class HealthController : MonoBehaviour
     {
         if (!isInvincible)
         {
+            if(_damageSound) AudioSource.PlayClipAtPoint(_damageSound, transform.position, _damageSoundVolume);
+            
             float finalDamage = 0;
             if (isTrueDamage)
             {
